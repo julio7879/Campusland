@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 16px;
+    color: #1f2937;
+    background-color: #f0f3f5;
+}
+
+.hero {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #681313;
+    color: rgb(202, 202, 202);
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    border-radius: 10px;
+    border: 1px solid #080808;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero h1:hover {
+    color: #080808;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero p:hover {
+    color: #080808;
+}
+
+.container {
+    width: 85%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.card {
+    background-color: white;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid #dbeafe;
+    border-radius: 18px;
+    border-left: 5px solid #681313;
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #681313;
+}
+
+.card p {
+    line-height: 1.5;
+}
+
+.intro {
+    text-align: center;
+}
+
+.link {
+    color: #681313;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+}
+
+.skills-list {
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+.skills-list li {
+    margin-bottom: 8px;
+}
+
+.skills-list li::marker {
+    color: #681313;
+}
+
+.progress-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+.progress-table th,
+.progress-table td {
+    border: 1px solid #d1d5db;
+    padding: 12px;
+    text-align: left;
+    border-top: 2px solid #681313;
+}
+
+.progress-table th {
+    background-color: #681313;
+    color: white;
+}
+
+.progress-table tr:nth-child(even) {
+    background-color: #f3f4f6;
+}
+
+.info-box {
+    border-left: 6px solid #681313;
+}
+
+.scroll-box {
+    max-height: 150px;
+    overflow: auto;
+    padding: 16px;
+    border: 1px solid #681313;
+    border-radius: 12px;
+    background-color: #f9fafb;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    color: #681313;
+}
+
+.footer:hover {
+    color: #080808;
+}

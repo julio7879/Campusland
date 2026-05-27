@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="descripcion" content="Formulario de registro creado con HTML puro para practicar listas, tablas, citas y formularios.">
+    <meta name="autor" content="Estudiante de campusland">
+    <title>Registro Tech Campus</title>
+    <link rel="icon" href="icon/icono.png">
+    <link rel="stylesheet" href="css/cssIndex2.css">
+</head>
+<body>
+    <header id="inicio">
+        <img src="image/campus.jpeg" alt="Logo de Tech Campus" width="90">
+        <h1>Registro Tech Campus</h1>
+        <p>Aprende HTML construyendo una página para presentar información y recolectar datos.</p>
+        <ul><nav aria-label="Navegación principal">
+            <li><a href="#programa">Programa</a></li>
+            <li><a href="#horario">Horario</a></li>
+            <li><a href="#frase">Frase</a></li>
+            <li><a href="#registro">Registro</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </nav></ul>
+    </header>
+    <hr id="hr1">
+    <main>
+        <section id="programa">
+            <h2>Programa de aprendizaje nivel bajo en HTML</h2>
+        <p>
+            Este programa está diseñado para estudiantes que inician desde cero
+            y quieren aprender a construir páginas web paso a paso.
+        </p>
+        <h3>Algunas cosas que aprenderas en el curso de aprendizaje</h3>
+        <ol type="I">
+            <li>aprender etiquetas de html</li>
+            <li>aprender atributos de etiquetas</li>
+            <li>aprender a crear formularios</li>
+
+        </ol>
+        <hr>
+        <h3>¿Qué veremos en esta sesión?</h3>
+        <ul>
+            <li>Separadores para organizar el contenido.</li>
+            <li>Listas para mostrar ideas o pasos.</li>
+            <li>Tablas para presentar información ordenada.</li>
+            <li>Formularios para recolectar datos del usuario.</li>
+        </ul>
+
+        <h3>Pasos para participar</h3>
+        <ol>
+            <li>Leer la información del programa.</li>
+            <li>Revisar el horario disponible.</li>
+            <li>Completar el formulario de registro.</li>
+            <li>Confirmar los datos antes de enviar.</li>
+        </ol>
+    </section>
+    <hr>
+    <section id="horario">
+        <h2>Horario sugerido</h2>
+        <p>La siguiente tabla resume la distribución de la sesión práctica.</p>
+
+        <table border="1">
+            <tr>
+                <th>Momento</th>
+                <th>Actividad</th>
+                <th>Duración</th>
+            </tr>
+            <tr>
+                <td>Inicio</td>
+                <td>Explicación de listas, tablas y formularios</td>
+                <td>30 minutos</td>
+            </tr>
+            <tr>
+                <td>Práctica guiada</td>
+                <td>Construcción de la página Registro Tech Campus</td>
+                <td>90 minutos</td>
+            </tr>
+            <tr>
+                <td>Cierre</td>
+                <td>Revisión, preguntas y reto final</td>
+                <td>30 minutos</td>
+            </tr>
+            <tr>    
+                <td>Evaluacion Final</td>
+                <td>evaluacion del desempeño</td>
+                <td>15 minutos</td>
+            </tr>
+        </table>
+    </section>
+    <hr>
+    <section id="frase">
+        <h2>Frase de inspiración</h2>
+
+        <blockquote cite="https://developer.mozilla.org/es/docs/Web/HTML">
+            <p>HTML es el lenguaje que estructura el contenido de la web.</p>
+            <footer>
+                Fuente: <cite>MDN Web Docs</cite>
+            </footer>
+        </blockquote>
+    </section>
+    <hr>
+    <section id="registro">
+        <h2>Formulario de registro</h2>
+        <p>Completa tus datos para participar en la experiencia Tech Campus.</p>
+
+        <form action="#" method="post">
+            <p>
+                <label for="nombre">Nombre completo:</label><br>
+                <input type="text" id="nombre" name="nombre" placeholder="Ejemplo: Ana Pérez" required>
+            </p>
+
+            <p>
+                <label for="correo">Correo electrónico:</label><br>
+                <input type="email" id="correo" name="correo" placeholder="nombre@correo.com" required>
+            </p>
+
+            <p>
+                <label for="telefono">Teléfono:</label><br>
+                <input type="tel" id="telefono" name="telefono" placeholder="3001234567">
+            </p>
+
+            <p>
+                <label for="ciudad">ciudad:</label><br>
+                <input type="lugar" id="ciudad" name="ciudad" placeholder="Lugar de nacimiento">
+            </p>
+            <p>Genero:</p>
+            <p>
+                <input type="radio" id="masculino" name="genero" value="masculino">
+                <label for="masculino">Masculino</label>
+            </p>
+            <p>
+                <input type="radio" id="femenino" name="genero" value="femenino">
+                <label for="femenino">Femenino</label>
+            </p>
+            <p>
+                <label for="otro">otro:</label>
+                <input type="text" name="genero" id="otro" placeholder="Ejemplo: Helicoptero-apache">
+            </p>
+            
+            <p>
+                <label for="programa-interes">Programa de interés:</label><br>
+                <select id="programa-interes" name="programa_interes" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="html-css">HTML y CSS</option>
+                    <option value="javascript">JavaScript básico</option>
+                    <option value="web-completa">Desarrollo web completo</option>
+                    <option value="boostrap">boostrap</option>
+                </select>
+            </p>
+
+            <p>Modalidad preferida:</p>
+            <p>
+                <input type="radio" id="presencial" name="modalidad" value="presencial">
+                <label for="presencial">Presencial</label>
+            </p>
+            <p>
+                <input type="radio" id="virtual" name="modalidad" value="virtual">
+                <label for="virtual">Virtual</label>
+            </p>
+
+            <fieldset>
+                <legend>Intereses del estudiante</legend>
+
+                <p>
+                    <input type="checkbox" id="frontend" name="intereses" value="frontend">
+                    <label for="frontend">Diseño de páginas web</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="formularios" name="intereses" value="formularios">
+                    <label for="formularios">Formularios y recolección de datos</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="proyectos" name="intereses" value="proyectos">
+                    <label for="proyectos">Crear proyectos reales</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="backend" name="intereses" value="backend">
+                    <label for="backend">Desarrollo backend</label>
+                </p>
+            </fieldset>
+
+            <p>
+                <label for="comentarios">Comentarios:</label><br>
+                <textarea id="comentarios" name="comentarios" rows="5" cols="40" placeholder="Cuéntanos qué esperas aprender..."></textarea>
+            </p>
+
+            <input type="hidden" name="origen" value="sesion-html-2">
+
+            <p>
+                <button type="submit">Enviar registro</button>
+                <button type="reset">Limpiar formulario</button>
+            </p>
+        </form>
+    </section>
+    </main>
+    <hr>
+    <footer id="contacto">
+        <p>Pagina diseñada por Julio ernesto castaño palacios</p>
+        <p>Contacto: julioveg567@gmail.com</p>
+        <p>Tel: 3223602525</p>
+        <p><a href="#inicio">Volver al inicio</a></p>
+    </footer>
+    
+</body>
+</html>

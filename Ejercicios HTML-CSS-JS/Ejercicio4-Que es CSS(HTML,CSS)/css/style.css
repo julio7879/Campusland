@@ -1,0 +1,143 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #801d24; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+main {
+    background-color: #ffffff; 
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;         
+    border-radius: 8px;    
+    border: 2px solid #1a252f;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); 
+}
+
+#titulo-principal, #subtitulo-puntos, #subtitulo-selectores {
+    color: #a3111b;
+    margin-bottom: 10px;
+}
+
+#titulo-principal {
+    font-size: 24px;
+    border-bottom: 2px solid #1a252f;
+    padding-bottom: 10px;
+}
+
+#subtitulo-puntos, #subtitulo-selectores {
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+hr {
+    border: 0;
+    border-top: 2px solid #1a252f;
+    margin: 15px 0;
+}
+
+ul.card, .profile-card, button, input[type="text"] {
+    border: 2px solid #1a252f;
+}
+
+ul.card, .profile-card {
+    border-radius: 6px;
+    padding: 20px;
+    margin: 30px 0;
+    box-sizing: border-box;
+}
+
+ul.card {
+    background-color: #f8f9fa;
+    padding-left: 40px;
+    list-style-type: square;
+    box-shadow: 2px 2px 0px rgba(26, 37, 47, 0.1);
+}
+
+ul.card li {
+    margin-bottom: 8px;
+}
+
+.profile-card {
+    background-color: #f0f4f8;
+    border-left: 6px solid #1a252f;
+}
+
+.profile-card__title {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+button, input[type="text"] {
+    border-radius: 4px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #1a252f;
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover, .menu a:hover {
+    color: #000000;
+    background-color: #b80d0d; 
+    border-color: #be0d0d;
+}
+
+input[type="text"] {
+    padding: 6px 12px;
+    width: 100%;
+    max-width: 250px;           
+    text-align: center;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #555555;
+    border-top: 2px solid #1a252f;
+    padding-top: 15px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    gap: 8px;              
+    margin-bottom: 15px;    
+}
+
+.menu a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 2px 10px;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+.menu button:disabled {
+    background-color: #e0e0e0;
+    color: #a0a0a0;
+    border: 2px solid #cccccc;
+    padding: 4px 12px;
+    font-size: 13px;
+    cursor: not-allowed;
+}

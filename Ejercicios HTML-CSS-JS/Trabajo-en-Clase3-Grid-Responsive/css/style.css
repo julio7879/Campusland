@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: linear-gradient(135deg, #51315f, #1d4ed8);
+    color: #1e293b;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+h1:hover {
+    transform: scale(1.02);
+    color: #8219b3;
+}
+
+h2:hover {
+    transform: scale(1.02);
+    color: #8219b3;
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 60%;
+    max-width: 1000px;
+    margin: 20px auto;
+
+}
+
+.card {
+    background: linear-gradient(135deg, #8219b3, #1d4ed8);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid black;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+    border: 1px solid #eae7eb;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card img:hover {
+    border: 3px solid white;
+}
+
+footer {
+    text-align: center;
+    color: white;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .contenedor {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Escritorio */
+@media (min-width: 1024px) {
+    .contenedor {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

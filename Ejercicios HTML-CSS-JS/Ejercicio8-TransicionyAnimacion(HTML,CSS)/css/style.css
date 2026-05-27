@@ -1,0 +1,240 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: linear-gradient(90deg, #2593bf 0%, #1a2639 100%);
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 95%;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.navheader {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 2%;
+    color: white;
+    box-shadow: 0 4px 1px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+}
+
+.navlinks {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 2px;
+    transition: color 0.2s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: rgb(218, 130, 15);
+}
+
+.transition {
+    color: #e9eaf0;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    transition: transform 0.2s ease;
+}
+
+.transition:hover {
+    color: rgb(218, 130, 15);
+}
+
+section {
+    border-radius: 20px;
+    padding: 1px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    align-items: center;
+    border: 1px solid blanchedalmond;
+    box-shadow: 0 4px 1px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    color: white;
+}
+
+.buton {
+    background-color: #0451cc;
+    display: inline-block;
+    border-radius: 18px;
+    padding: 15px 3px;
+    color: #e2e8f0;
+    cursor: pointer;
+    margin: 8px;
+    border: 1px solid #1a2639;
+
+
+}
+
+.buton:hover {
+    background-color: lightblue;
+    color: black;
+    transform: scale(1, 1)rotate(2deg);
+}
+
+.buton-cubic-bezier {
+    background-color: aquamarine;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    display: inline-block;
+    cursor: pointer;
+    margin: 20px;
+    border: 1px solid #1a2639;
+
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.buton-cubic-bezier:hover {
+    background-color: lightblue;
+    color: #1a2639;
+}
+
+.buton-step {
+    background-color: aquamarine;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    display: inline-block;
+    cursor: pointer;
+    margin: 15px 3px;
+    border: 1px solid #1a2639;
+
+    transition: all 0.3s steps(2)
+}
+
+.buton-step:hover {
+    background-color: rgb(10, 123, 160);
+    color: #1a2639;
+    transform: scale(1.1) rotate(3deg);
+}
+
+.boton {
+    border: 1px solid #1a2639;
+    color: #1a2639;
+    background-color: #0451cc;
+    border-radius: 18px;
+    color: #e9eaf0;
+    padding: 15px 3px;
+    margin: 8px;
+
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.boton:hover {
+    background-color: lightblue;
+    color: #1a2639;
+
+    transform: scale(1.1) rotate(3deg);
+}
+
+.boton-rota {
+    display: inline-block;
+    border: 1px solid #1a2639;
+    color: #1a2639;
+    background-color: #0451cc;
+    border-radius: 18px;
+    color: #e9eaf0;
+    padding: 15px 3px;
+    margin: 8px;
+
+    animation: girar 0.001s linear infinite;
+}
+
+.saltos {
+    padding: 15px;
+}
+
+.buton-animacion {
+    border: 1px solid#1a2639;
+    color: #1a2639;
+    background-color: #0451cc;
+    border-radius: 18px;
+    color: #e9eaf0;
+    padding: 15px 3px;
+    margin: 8px;
+    display: inline-block;
+
+    animation: julioanimaciones 2s ease-out infinite;
+}
+
+.buton-animacion2 {
+    border: 1px solid #1a2639;
+    color: #1a2639;
+    background-color: #0451cc;
+    border-radius: 18px;
+    color: #e9eaf0;
+    padding: 15px 3px;
+    margin: 8px;
+    display: inline-block;
+
+    animation: movimiento 2s ease-out infinite;
+}
+
+footer {
+    text-align: center;
+    color: white;
+}
+
+
+@keyframes julioanimaciones {
+    from {
+        opacity: 0;
+        transform: translatey(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes movimiento {
+    0% {
+        transformx: (0);
+        background: #0451cc;
+    }
+
+    33% {
+        transform: translate(100px);
+        background: rebeccapurple;
+    }
+
+    60% {
+        transform: (200px);
+        background: red;
+    }
+
+    100% {
+        transform: (300px);
+        background: burlywood;
+    }
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

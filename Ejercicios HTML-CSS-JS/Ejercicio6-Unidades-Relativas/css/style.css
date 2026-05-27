@@ -1,0 +1,120 @@
+.caja-px {
+    width: 300px;
+    padding: 20px;
+    background-color: blue;
+    color: white;
+}
+
+.contenedor {
+    width: 500px;
+    background-color: lightgray;
+}
+
+.caja-porcentaje {
+    width: 90%;
+    background-color: green;
+    color: white;
+}
+body {
+    font-size: 16px; /* Tamaño base */
+}
+.titulo{
+    font-size: 3rem;
+}
+.seccion-vertical {
+    height: 2vh;
+    width: 63vh;
+    background-color: purple;
+    color: white;
+    display: flex; /* Añadido para centrar texto */
+    align-items: center; /* Añadido centrar texto */
+    justify-content: center; /* Añadido centrar text */
+}
+.caja-vw {
+    width: 50vw;
+    background-color: orange;
+}
+.etiqueta-inblock {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 20px;
+    background-color: #dbeafe;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+}
+.bloque {
+    display: block;
+    background-color: lightblue;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #333;
+}
+.inline {
+    display: inline;
+    background-color: yellow;
+    padding: 10px;
+    margin: 10px; /* Margin horizontal */
+}
+.etiqueta {
+    display: inline-block;
+    padding: 10px 14px;
+    background-color: #064aa3;
+    margin-right: 15px;
+    border-radius: 15px;
+    color: #ffffff;
+}
+.visible {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.oculto {
+    display: none;
+}
+.static { 
+    position: static; 
+    background-color: lightgray;
+}
+.relative { 
+    position: relative; top: 20px; 
+    background-color: lightgreen;
+}
+    .fixed-box { 
+    position: fixed; bottom: 10px;
+    right: 10px;
+    background-color: purple; 
+    color: white;
+    padding: 10px; 
+}
+    .menu { 
+    position: sticky; 
+    top: 0; 
+    background-color: orange; 
+    padding: 15px; 
+}
+.caja { 
+    padding: 20px; 
+    margin: 10px; 
+}
+.contenedor-position { 
+    height: 300px; 
+}
+.espacio { 
+    height: 1000px;
+}
+.contenedor-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.item {
+    background-color: coral;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
