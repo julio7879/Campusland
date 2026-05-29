@@ -69,6 +69,22 @@ header.scrolled {
   padding-bottom: var(--space-xl);
 }
 
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.section-header .badge {
+  margin-bottom: var(--space-xs);
+}
+
+.section-header p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
 /* Footer Section */
 footer {
   background-color: hsl(120, 15%, 15%);
@@ -93,6 +109,11 @@ footer p {
 .footer-brand .logo {
   color: #ffffff;
   margin-bottom: var(--space-sm);
+}
+
+.footer-brand p {
+  margin-top: var(--space-sm);
+  font-size: 0.95rem;
 }
 
 .footer-col-title {
@@ -164,6 +185,10 @@ footer p {
 .footer-bottom-links {
   display: flex;
   gap: var(--space-md);
+}
+
+.footer-bottom .footer-link {
+  font-size: 0.85rem;
 }
 
 /* Responsiveness for Layout Header */

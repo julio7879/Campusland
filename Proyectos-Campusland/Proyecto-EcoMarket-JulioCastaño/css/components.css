@@ -121,10 +121,19 @@
   flex-wrap: wrap;
 }
 
+.hero-banner .btn-secondary {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.hero-banner .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 /* Product Cards Grid */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-lg);
   margin-top: var(--space-lg);
   margin-bottom: var(--space-lg);
@@ -325,3 +334,35 @@
     justify-content: center;
   }
 }
+
+/* Placeholder Card (used in skeleton pages) */
+.placeholder-card {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  margin-top: var(--space-md);
+}
+
+.placeholder-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.placeholder-card h1 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: var(--space-xs);
+}
+
+.placeholder-card p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--space-lg);
+  color: var(--text-muted);
+}
+
