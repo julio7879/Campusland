@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-enlaces);
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-boton-hover);
+}
+
+/* ===== HOME ===== */
+
+/* Hero */
+.hero {
+    background: linear-gradient(rgba(1, 66, 60, 0.7), rgba(1, 66, 60, 0.7)),
+        url('https://picsum.photos/id/104/1920/600?grayscale') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 5rem 2rem;
+    margin-bottom: 3rem;
+}
+
+.hero-contenido {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Sección de productos destacados */
+.destacados {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 3rem;
+}
+
+.destacados h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--color-texto-principal);
+}
+
+/* Grid responsivo */
+.productos-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Escritorio */
+@media (min-width: 1024px) {
+    .productos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

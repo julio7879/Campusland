@@ -1,0 +1,31 @@
+:root {
+    /* Colores primitivos (valores directos) */
+    --verde-bosque: #01423C;
+    --verde-oliva: #3E6C29;
+    --turquesa: #31B3BA;
+    --verde-neon: #2DFF51;
+    --verde-vibrante: #11CC00;
+
+    /* Colores neutros */
+    --blanco: #FFFFFF;
+    --fondo-suave: #F5F5DC;
+    /* beige natural */
+    --texto-oscuro: #0F172A;
+
+    /* Tokens semánticos (para qué se usa cada color) */
+    --color-texto-principal: var(--verde-bosque);
+    --color-texto-secundario: var(--verde-oliva);
+    --color-enlaces: var(--turquesa);
+    --color-boton-cta: var(--verde-neon);
+    --color-boton-hover: var(--verde-vibrante);
+    --color-exito: var(--verde-vibrante);
+    --color-fondo: var(--fondo-suave);
+    --color-superficie: var(--blanco);
+
+    /* Tipografía */
+    --fuente-principal: 'Inter', sans-serif;
+
+    /* Sombras y bordes */
+    --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --radio-borde: 16px;
+}

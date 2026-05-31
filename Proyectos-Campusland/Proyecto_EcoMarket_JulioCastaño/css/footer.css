@@ -1,0 +1,93 @@
+/* ===== FOOTER ===== */
+.footer {
+    background-color: var(--verde-bosque);
+    color: var(--blanco);
+    padding: 3rem 2rem 2rem;
+    margin-top: 4rem;
+}
+
+.contenedor-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* Cada columna del footer */
+.columna-footer {
+    flex: 1;
+    min-width: 180px;
+}
+
+.columna-footer h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--verde-neon);
+    font-weight: 600;
+}
+
+.columna-footer p {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.columna-footer a {
+    color: var(--blanco);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.columna-footer a:hover {
+    color: var(--verde-neon);
+    transform: translateX(4px);
+}
+
+/* Lista de redes y legales */
+.redes-sociales,
+.legales {
+    list-style: none;
+    padding: 0;
+}
+
+.redes-sociales li,
+.legales li {
+    margin-bottom: 0.75rem;
+}
+
+.redes-sociales a,
+.legales a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Derechos de autor */
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.85rem;
+}
+
+/* Responsividad móvil */
+@media (max-width: 768px) {
+    .contenedor-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .columna-footer p {
+        justify-content: center;
+    }
+
+    .redes-sociales a,
+    .legales a {
+        justify-content: center;
+    }
+}

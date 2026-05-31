@@ -1,0 +1,12 @@
+/* Direcciones de Estilos*/
+
+/* componentes*/
+@import url('components.css');
+/* Animaciones */
+@import url('animations.css');
+/* main */
+@import url('main.css');
+/* layout */
+@import url('layout.css');
+/* Variables */
+@import url('variables.css');

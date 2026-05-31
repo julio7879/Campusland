@@ -1,0 +1,89 @@
+/* ===== COMPONENTES REUTILIZABLES ===== */
+
+/* Botón CTA principal */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 40px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+    font-family: var(--fuente-principal);
+}
+
+.btn-primario {
+    background-color: var(--color-boton-cta);
+    color: var(--texto-oscuro);
+    box-shadow: var(--sombra-suave);
+}
+
+.btn-primario:hover {
+    background-color: var(--color-boton-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-elevada);
+}
+
+/* Tarjeta de producto */
+.product-card {
+    background: var(--color-superficie);
+    border-radius: var(--radio-borde);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-elevada);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-texto-principal);
+}
+
+.precio {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--color-texto-secundario);
+    margin: 0.5rem 0;
+}
+
+.etiqueta-eco {
+    display: inline-block;
+    background-color: var(--verde-oliva);
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+}
+
+.btn-card {
+    background-color: var(--color-enlaces);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    display: inline-block;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+}
+
+.btn-card:hover {
+    background-color: var(--verde-vibrante);
+    transform: scale(1.02);
+}

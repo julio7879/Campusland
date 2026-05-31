@@ -1,0 +1,44 @@
+.header {
+    background-color: var(--color-superficie);
+    box-shadow: var(--sombra-suave);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+.nav {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    font-weight: 500;
+}
+
+/* Móvil: si la pantalla es muy pequeña, centramos */
+@media (max-width: 640px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav {
+        justify-content: center;
+    }
+}
