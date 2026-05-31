@@ -1,0 +1,49 @@
+/* ===== ANIMACIONES SUTILES ===== */
+
+/* Efecto fade-in al cargar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-card,
+.hero,
+.testimonio-card,
+.principio-card {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* Efecto de pulso suave para botón CTA */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(45, 255, 81, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(45, 255, 81, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(45, 255, 81, 0);
+    }
+}
+
+.btn-primario {
+    animation: pulse 2s infinite;
+}
+
+/* Transiciones generales */
+a,
+button,
+.product-card,
+.btn-card,
+.btn-fav {
+    transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}

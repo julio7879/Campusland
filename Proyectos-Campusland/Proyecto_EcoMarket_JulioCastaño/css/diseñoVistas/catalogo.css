@@ -1,0 +1,82 @@
+/* ===== CATÁLOGO ===== */
+
+.pagina-catalogo {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* Layout de dos columnas */
+.layout-catalogo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/* Sidebar (filtros) */
+.sidebar-filtros {
+    background: transparent;
+}
+
+/* Grid de productos en el catálogo */
+.grid-productos {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+/* Responsividad: tablet */
+@media (min-width: 768px) {
+    .layout-catalogo {
+        grid-template-columns: 260px 1fr;
+    }
+
+    .grid-productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsividad: escritorio */
+@media (min-width: 1024px) {
+    .grid-productos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Botón de favoritos (corazón) en la esquina de la imagen */
+.product-image .btn-fav {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    color: #ff6b6b;
+    z-index: 5;
+    margin: 0;
+}
+
+.product-image .btn-fav:hover {
+    transform: scale(1.15);
+    background: var(--blanco);
+    color: #ff3b3b;
+}
+
+.product-badge.stock-disponible {
+    background-color: var(--verde-oliva);
+    color: var(--blanco);
+}
+
+.product-badge.stock-limitado {
+    background-color: var(--turquesa);
+    color: var(--blanco);
+}

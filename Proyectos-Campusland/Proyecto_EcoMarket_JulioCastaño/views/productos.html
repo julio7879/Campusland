@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMarket | Catálogo</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="../img/icons/gemini-svg (1).svg?v=2" alt="OrganicGo Logo" class="logo-img">
+        </a>
+        <nav class="nav">
+            <a href="../index.html">Inicio</a>
+            <a href="productos.html">Catálogo</a>
+            <a href="sobre-nosotros.html">Sobre Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="pagina-catalogo">
+            <div class="layout-catalogo">
+
+                <!-- Sidebar de filtros (solo visual) -->
+                <aside class="sidebar-filtros">
+                    <div class="filtros">
+                        <h3>🔍 Filtrar productos</h3>
+
+                        <div class="busqueda">
+                            <input type="text" placeholder="Buscar productos...">
+                        </div>
+
+                        <div class="grupo-filtro">
+                            <h4>Categorías</h4>
+                            <ul>
+                                <li><label><input type="checkbox"> Reutilizables</label></li>
+                                <li><label><input type="checkbox"> Biodegradables</label></li>
+                                <li><label><input type="checkbox"> Zero waste</label></li>
+                                <li><label><input type="checkbox"> Cuidado personal</label></li>
+                            </ul>
+                        </div>
+
+                        <div class="grupo-filtro">
+                            <h4>Precio</h4>
+                            <ul>
+                                <li><label><input type="radio" name="precio"> Menos de $10.000</label></li>
+                                <li><label><input type="radio" name="precio"> $10.000 - $20.000</label></li>
+                                <li><label><input type="radio" name="precio"> Más de $20.000</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Grid de productos -->
+                <div class="grid-productos">
+
+                    <!-- Producto 1: Bolsa de Algodón -->
+                    <article class="product-card" id="producto-bolsa-algodon">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/id/20/300/200" alt="Bolsa de algodón de tela ecológica"
+                                width="300" height="210">
+                            <span class="product-badge stock-disponible">En stock</span>
+                            <button class="btn-fav" type="button" aria-label="Agregar a favoritos">❤️</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Bolsa de Algodón</h3>
+                            <p>Bolsa de algodón orgánico certificado, resistente y perfecta para tus compras diarias sin
+                                plástico.</p>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    $12.900
+                                    <small>COP</small>
+                                </div>
+                                <button class="btn-comprar" type="button"
+                                    aria-label="Agregar bolsa de algodón al carrito">
+                                    🛒 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Producto 2: Botella Acero -->
+                    <article class="product-card" id="producto-botella-acero">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/id/96/300/200" alt="Botella de agua de acero inoxidable"
+                                width="300" height="210">
+                            <span class="product-badge stock-disponible">En stock</span>
+                            <button class="btn-fav" type="button" aria-label="Agregar a favoritos">❤️</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Botella Acero</h3>
+                            <p>Botella reutilizable de acero inoxidable de alta calidad. Conserva tus bebidas frías y
+                                calientes.</p>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    $24.500
+                                    <small>COP</small>
+                                </div>
+                                <button class="btn-comprar" type="button"
+                                    aria-label="Agregar botella de acero al carrito">
+                                    🛒 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Producto 3: Cepillo de Bambú -->
+                    <article class="product-card" id="producto-cepillo-bambu">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/id/30/300/200" alt="Cepillo dental ecológico de bambú"
+                                width="300" height="210">
+                            <span class="product-badge stock-disponible">En stock</span>
+                            <button class="btn-fav" type="button" aria-label="Agregar a favoritos">❤️</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Cepillo de Bambú</h3>
+                            <p>Cepillo dental 100% biodegradable con mango de bambú natural y cerdas suaves de nylon sin
+                                BPA.</p>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    $8.900
+                                    <small>COP</small>
+                                </div>
+                                <button class="btn-comprar" type="button"
+                                    aria-label="Agregar cepillo de bambú al carrito">
+                                    🛒 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Producto 4: Jabón de Avena -->
+                    <article class="product-card" id="producto-jabon-avena">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/id/127/300/200" alt="Jabón sólido artesanal de avena"
+                                width="300" height="210">
+                            <span class="product-badge stock-disponible">En stock</span>
+                            <button class="btn-fav" type="button" aria-label="Agregar a favoritos">❤️</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Jabón de Avena</h3>
+                            <p>Jabón sólido artesanal y natural con propiedades exfoliantes e hidratantes. Libre de
+                                plástico.</p>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    $6.500
+                                    <small>COP</small>
+                                </div>
+                                <button class="btn-comprar" type="button"
+                                    aria-label="Agregar jabón de avena al carrito">
+                                    🛒 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Producto 5: Bombilla + Limpiapipas -->
+                    <article class="product-card" id="producto-bombilla-limpiapipas">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/id/94/300/200"
+                                alt="Bombilla de acero inoxidable con limpiador" width="300" height="210">
+                            <span class="product-badge stock-limitado">Pocas unidades</span>
+                            <button class="btn-fav" type="button" aria-label="Agregar a favoritos">❤️</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Bombilla + Limpiapipas</h3>
+                            <p>Kit de bombilla reutilizable de acero inoxidable con cepillo limpiador de cerdas
+                                naturales.</p>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    $11.900
+                                    <small>COP</small>
+                                </div>
+                                <button class="btn-comprar" type="button" aria-label="Agregar bombilla al carrito">
+                                    🛒 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Producto 6: Fundas de Cera -->
+                    <article class="product-card" id="producto-fundas-cera">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/id/45/300/200"
+                                alt="Envoltorios reutilizables de cera de abeja" width="300" height="210">
+                            <span class="product-badge stock-disponible">En stock</span>
+                            <button class="btn-fav" type="button" aria-label="Agregar a favoritos">❤️</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Fundas de Cera</h3>
+                            <p>Envoltorios ecológicos y reutilizables de cera de abeja, ideales para conservar frescos
+                                tus alimentos.</p>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    $19.900
+                                    <small>COP</small>
+                                </div>
+                                <button class="btn-comprar" type="button"
+                                    aria-label="Agregar fundas de cera al carrito">
+                                    🛒 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Producto 7: Termo de Bambú -->
+                    <article class="product-card" id="producto-termo-bambu">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/id/28/300/200" alt="Termo con exterior de bambú natural"
+                                width="300" height="210">
+                            <span class="product-badge stock-disponible">En stock</span>
+                            <button class="btn-fav" type="button" aria-label="Agregar a favoritos">❤️</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Termo de Bambú</h3>
+                            <p>Termo térmico interior de acero inoxidable y revestimiento ecológico exterior de bambú.
+                            </p>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    $32.000
+                                    <small>COP</small>
+                                </div>
+                                <button class="btn-comprar" type="button"
+                                    aria-label="Agregar termo de bambú al carrito">
+                                    🛒 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Producto 8: Pajitas de Metal -->
+                    <article class="product-card" id="producto-pajitas-metal">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/id/116/300/200" alt="Pajitas reutilizables de metal"
+                                width="300" height="210">
+                            <span class="product-badge stock-limitado">Pocas unidades</span>
+                            <button class="btn-fav" type="button" aria-label="Agregar a favoritos">❤️</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Pajitas de Metal</h3>
+                            <p>Set de pajitas metálicas de acero inoxidable de grado alimenticio, ecológicas y
+                                duraderas.</p>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    $7.900
+                                    <small>COP</small>
+                                </div>
+                                <button class="btn-comprar" type="button"
+                                    aria-label="Agregar pajitas de metal al carrito">
+                                    🛒 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Producto 9: Esponja de Luffa -->
+                    <article class="product-card" id="producto-esponja-luffa">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/id/85/300/200" alt="Esponja vegetal natural de luffa"
+                                width="300" height="210">
+                            <span class="product-badge stock-disponible">En stock</span>
+                            <button class="btn-fav" type="button" aria-label="Agregar a favoritos">❤️</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Esponja de Luffa</h3>
+                            <p>Esponja de luffa natural vegetal 100% biodegradable. Ideal para exfoliación o fregar
+                                platos.</p>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    $5.500
+                                    <small>COP</small>
+                                </div>
+                                <button class="btn-comprar" type="button"
+                                    aria-label="Agregar esponja de luffa al carrito">
+                                    🛒 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Producto 10: Cepillo de Ducha -->
+                    <article class="product-card" id="producto-cepillo-ducha">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/id/41/300/200" alt="Cepillo de bambú para ducha" width="300"
+                                height="210">
+                            <span class="product-badge stock-disponible">En stock</span>
+                            <button class="btn-fav" type="button" aria-label="Agregar a favoritos">❤️</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Cepillo de Ducha</h3>
+                            <p>Cepillo con mango de madera ecológica y cerdas suaves para masajear y limpiar la piel en
+                                la ducha.</p>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    $14.500
+                                    <small>COP</small>
+                                </div>
+                                <button class="btn-comprar" type="button"
+                                    aria-label="Agregar cepillo de ducha al carrito">
+                                    🛒 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div> <!-- Cierra grid-productos -->
+            </div> <!-- Cierra layout-catalogo -->
+
+            <!-- Paginación visual -->
+            <div class="paginacion">
+                <a href="#" class="activo">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">Siguiente →</a>
+            </div>
+        </div> <!-- Cierra pagina-catalogo -->
+    </main>
+
+    <footer class="footer">
+        <!-- Aquí copias exactamente el mismo footer que tienes en index.html -->
+        <div class="contenedor-footer">
+            <div class="columna-footer">
+                <h4>📬 Contacto</h4>
+                <p>📧 <a href="mailto:hola@ecomarket.com">hola@ecomarket.com</a></p>
+                <p>📞 <a href="tel:+573001234567">+57 300 123 4567</a></p>
+            </div>
+            <div class="columna-footer">
+                <h4>🌱 Redes</h4>
+                <ul class="redes-sociales">
+                    <li><a href="#">📷 Instagram</a></li>
+                    <li><a href="#">📘 Facebook</a></li>
+                    <li><a href="#">🐦 Twitter</a></li>
+                </ul>
+            </div>
+            <div class="columna-footer">
+                <h4>📜 Legal</h4>
+                <ul class="legales">
+                    <li><a href="#">Aviso de privacidad</a></li>
+                    <li><a href="#">Política de cookies</a></li>
+                    <li><a href="#">Términos de uso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 EcoMarket – Productos sostenibles para un futuro mejor</p>
+        </div>
+    </footer>
+</body>
+
+</html>

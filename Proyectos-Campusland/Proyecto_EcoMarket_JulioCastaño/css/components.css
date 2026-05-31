@@ -13,16 +13,61 @@
     font-family: var(--fuente-principal);
 }
 
+/* Botón primario (verde neón) */
 .btn-primario {
-    background-color: var(--color-boton-cta);
+    background: linear-gradient(135deg, var(--verde-neon), var(--verde-vibrante));
     color: var(--texto-oscuro);
-    box-shadow: var(--sombra-suave);
+    padding: 0.8rem 1.8rem;
+    border-radius: 40px;
+    font-weight: bold;
+    transition: all 0.25s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
 }
 
 .btn-primario:hover {
-    background-color: var(--color-boton-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--sombra-elevada);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(45, 255, 81, 0.3);
+    background: linear-gradient(135deg, var(--verde-vibrante), var(--verde-neon));
+    color: var(--texto-oscuro);
+    /* siempre oscuro para contraste */
+}
+
+/* Botón secundario (borde transparente) */
+.btn-secundario {
+    background: transparent;
+    border: 2px solid var(--blanco);
+    color: var(--blanco);
+    padding: 0.8rem 1.8rem;
+    border-radius: 40px;
+    transition: all 0.25s ease;
+}
+
+.btn-secundario:hover {
+    background: var(--blanco);
+    color: var(--verde-bosque);
+    transform: translateY(-3px);
+}
+
+/* Botón de tarjeta (Comprar) */
+.btn-card {
+    background: var(--turquesa);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    display: inline-block;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.btn-card:hover {
+    background: var(--verde-vibrante);
+    color: var(--texto-oscuro);
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Tarjeta de producto */
@@ -31,23 +76,20 @@
     border-radius: var(--radio-borde);
     overflow: hidden;
     box-shadow: var(--sombra-suave);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1), box-shadow 0.3s ease;
 }
 
 .product-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--sombra-elevada);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
 }
 
 .product-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
+    transition: transform 0.4s ease;
 }
 
-.card-content {
-    padding: 1rem;
+.product-card:hover img {
+    transform: scale(1.02);
 }
 
 .card-content h3 {
@@ -73,17 +115,134 @@
     margin-bottom: 0.75rem;
 }
 
-.btn-card {
-    background-color: var(--color-enlaces);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 30px;
-    display: inline-block;
-    font-size: 0.9rem;
-    transition: background 0.2s ease;
+
+/* Botón ver más */
+.ver-mas-container {
+    text-align: center;
+    margin-top: 3rem;
 }
 
-.btn-card:hover {
+
+/* ===== COMPONENTES DEL CATÁLOGO ===== */
+/* Barra de búsqueda */
+.busqueda {
+    margin-bottom: 1.5rem;
+}
+
+.busqueda input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 40px;
+    font-family: var(--fuente-principal);
+    transition: border 0.2s ease;
+}
+
+.busqueda input:focus {
+    outline: none;
+    border-color: var(--turquesa);
+}
+
+/* Filtros */
+.filtros {
+    background: var(--color-superficie);
+    padding: 1.5rem;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-suave);
+}
+
+.filtros h3 {
+    margin-bottom: 1rem;
+    color: var(--color-texto-principal);
+}
+
+.grupo-filtro {
+    margin-bottom: 1.5rem;
+}
+
+.grupo-filtro h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-texto-secundario);
+}
+
+.grupo-filtro ul {
+    list-style: none;
+    padding: 0;
+}
+
+.grupo-filtro li {
+    margin-bottom: 0.5rem;
+}
+
+.grupo-filtro label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Etiqueta de stock */
+.stock {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    margin-top: 0.5rem;
+}
+
+.stock-disponible {
     background-color: var(--verde-vibrante);
-    transform: scale(1.02);
+    color: var(--texto-oscuro);
+}
+
+.stock-limitado {
+    background-color: var(--turquesa);
+    color: white;
+}
+
+/* Botón de favoritos (corazón) */
+.btn-fav {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    margin-top: 0.5rem;
+    padding: 0;
+    color: #ccc;
+}
+
+.btn-fav:hover {
+    transform: scale(1.2);
+    color: #ff6b6b;
+}
+
+/* Paginación */
+.paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.paginacion a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--color-superficie);
+    color: var(--color-texto-principal);
+    border-radius: 30px;
+    transition: all 0.2s ease;
+}
+
+.paginacion a:hover {
+    background-color: var(--verde-neon);
+    color: var(--texto-oscuro);
+    transform: translateY(-2px);
+}
+
+.paginacion .activo {
+    background-color: var(--verde-oliva);
+    color: white;
 }

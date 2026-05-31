@@ -6,13 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoMarket | Inicio</title>
     <link rel="icon" type="image/svg+xml" href="img/icons/gemini-svg.svg?v=2">
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/layout.css">
+
 </head>
 
 <body>
@@ -22,91 +17,195 @@
         </a>
         <nav class="nav">
             <a href="index.html">Inicio</a>
-            <a href="productos.html">Catálogo</a>
-            <a href="sobre-nosotros.html">Sobre Nosotros</a>
-            <a href="contacto.html">Contacto</a>
+            <a href="views/productos.html">Catálogo</a>
+            <a href="views/sobre-nosotros.html">Sobre Nosotros</a>
+            <a href="views/contacto.html">Contacto</a>
         </nav>
     </header>
     <main>
-        <!-- Hero -->
+        <!-- Hero mejorado con gradiente y overlay -->
         <section class="hero">
             <div class="hero-contenido">
-                <h1>Compra consciente, vive sostenible</h1>
-                <p>Productos ecológicos, reutilizables y libres de plástico para un futuro más verde.</p>
-                <a href="productos.html" class="btn btn-primario">🌱 Ver catálogo</a>
+                <span class="hero-badge">🌱 Bienvenido a OrganicGo</span>
+                <h1>Compra consciente, <span class="highlight">vive sostenible</span></h1>
+                <p>Productos ecológicos, reutilizables y libres de plástico para un futuro más verde. Cada compra
+                    cuenta.</p>
+                <div class="hero-buttons">
+                    <a href="views/productos.html" class="btn btn-primario">🌿 Ver catálogo</a>
+                    <a href="views/sobre-nosotros.html" class="btn btn-secundario">Conocer más</a>
+                </div>
+            </div>
+            <!-- Imagen decorativa (opcional) -->
+            <div class="hero-imagen-decorativa" aria-hidden="true"></div>
+        </section>
+
+        <!-- Sección de beneficios (opcional, breve) -->
+        <section class="beneficios-section section" id="beneficios">
+            <div class="container">
+                <!-- Encabezado de la sección -->
+                <div class="section-header">
+                    <span class="badge">¿Por qué elegirnos?</span>
+                    <h2>Comprometidos con el planeta</h2>
+                    <p>Cada producto que ofrecemos está pensado para reducir el impacto ambiental y promover un estilo
+                        de vida más
+                        consciente.</p>
+                </div>
+
+                <!-- Grid de 3 beneficios -->
+                <div class="beneficios-grid">
+                    <!-- Beneficio 1 -->
+                    <div class="beneficio-card beneficio-eco">
+                        <div class="beneficio-icon">🌿</div>
+                        <h3>100% Ecológico</h3>
+                        <p>Todos nuestros productos están fabricados con materiales naturales, libres de químicos
+                            dañinos y
+                            respetuosos con el ecosistema.</p>
+                    </div>
+
+                    <!-- Beneficio 2 -->
+                    <div class="beneficio-card beneficio-reciclado">
+                        <div class="beneficio-icon">♻️</div>
+                        <h3>Materiales Reciclados</h3>
+                        <p>Apostamos por la economía circular. Nuestros empaques y productos se fabrican con materiales
+                            reciclados y
+                            reciclables.</p>
+                    </div>
+
+                    <!-- Beneficio 3 -->
+                    <div class="beneficio-card beneficio-envio">
+                        <div class="beneficio-icon">🚲</div>
+                        <h3>Envíos Responsables</h3>
+                        <p>Compensamos la huella de carbono de cada envío. Utilizamos empaques biodegradables y rutas de
+                            entrega
+                            optimizadas.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Productos destacados -->
-        <section class="destacados">
-            <h2>✨ Productos destacados</h2>
-            <div class="productos-grid">
+        <!-- Productos destacados con fondo de imagen -->
+        <section id="productos-preview" class="productos-section section" aria-label="Productos destacados">
+            <div class="container">
 
-                <!-- Tarjeta 1 -->
-                <div class="product-card">
-                    <img src="https://picsum.photos/id/20/400/300" alt="Bolsa de tela">
-                    <div class="card-content">
-                        <span class="etiqueta-eco">Eco-friendly</span>
-                        <h3>Bolsa de Algodón Orgánico</h3>
-                        <p class="precio">$12.900</p>
-                        <a href="#" class="btn-card">Comprar</a>
-                    </div>
+                <!-- Encabezado de sección -->
+                <div class="section-header">
+                    <span class="badge">Catálogo</span>
+                    <h2>Productos Destacados</h2>
+                    <p>
+                        Una selección de nuestros artículos más populares, diseñados para
+                        reemplazar plásticos de un solo uso en tu vida diaria.
+                    </p>
                 </div>
 
-                <!-- Tarjeta 2 -->
-                <div class="product-card">
-                    <img src="https://picsum.photos/id/96/400/300" alt="Botella reutilizable">
-                    <div class="card-content">
-                        <span class="etiqueta-eco">Reutilizable</span>
-                        <h3>Botella de Acero Inoxidable</h3>
-                        <p class="precio">$24.500</p>
-                        <a href="#" class="btn-card">Comprar</a>
-                    </div>
+                <!-- Grid de 4 productos (CSS Grid) -->
+                <div class="productos-grid">
+
+                    <!-- Producto 1: Botella reutilizable -->
+                    <article class="product-card" id="producto-botella">
+                        <div class="product-image">
+                            <img src="img/products/botella.jpg"
+                                alt="Botella de agua reutilizable de acero inoxidable color verde" width="300"
+                                height="210">
+                            <span class="product-badge">Más vendido</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Botella Reutilizable</h3>
+                            <p>Botella de acero inoxidable de 750ml, libre de BPA. Mantiene bebidas frías 24h y
+                                calientes 12h.</p>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    $32.900
+                                    <small>COP</small>
+                                </div>
+                                <button class="btn-comprar" type="button"
+                                    aria-label="Agregar botella reutilizable al carrito">
+                                    🛒 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Producto 2: Cepillo de bambú -->
+                    <article class="product-card" id="producto-cepillo">
+                        <div class="product-image">
+                            <img src="img/products/cepillo.jpg"
+                                alt="Cepillo de dientes de bambú natural con cerdas suaves" width="300" height="210">
+                            <span class="product-badge">Eco</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Cepillo de Bambú</h3>
+                            <p>Cepillo 100% biodegradable con mango de bambú natural y cerdas de nylon sin BPA.</p>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    $12.500
+                                    <small>COP</small>
+                                </div>
+                                <button class="btn-comprar" type="button"
+                                    aria-label="Agregar cepillo de bambú al carrito">
+                                    🛒 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Producto 3: Bolsa ecológica -->
+                    <article class="product-card" id="producto-bolsa">
+                        <div class="product-image">
+                            <img src="img/products/bolsa.jpg"
+                                alt="Bolsa de tela ecológica de algodón natural color beige" width="300" height="210">
+                            <span class="product-badge">Nuevo</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Bolsa Ecológica</h3>
+                            <p>Bolsa tote de algodón orgánico certificado, resistente y reutilizable. Perfecta para el
+                                mercado.</p>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    $18.000
+                                    <small>COP</small>
+                                </div>
+                                <button class="btn-comprar" type="button"
+                                    aria-label="Agregar bolsa ecológica al carrito">
+                                    🛒 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Producto 4: Kit sostenible -->
+                    <article class="product-card" id="producto-kit">
+                        <div class="product-image">
+                            <img src="img/products/kit.jpg"
+                                alt="Kit sostenible con botella, cepillo, bolsa y jabón natural" width="300"
+                                height="210">
+                            <span class="product-badge">Oferta</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Kit Sostenible</h3>
+                            <p>Set completo: botella, cepillo de bambú, bolsa de tela y jabón natural. El regalo
+                                perfecto.</p>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    $55.900
+                                    <small>COP</small>
+                                </div>
+                                <button class="btn-comprar" type="button"
+                                    aria-label="Agregar kit sostenible al carrito">
+                                    🛒 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
 
-                <!-- Tarjeta 3 -->
-                <div class="product-card">
-                    <img src="https://picsum.photos/id/30/400/300" alt="Cepillo de bambú">
-                    <div class="card-content">
-                        <span class="etiqueta-eco">Biodegradable</span>
-                        <h3>Cepillo Dental de Bambú</h3>
-                        <p class="precio">$8.900</p>
-                        <a href="#" class="btn-card">Comprar</a>
-                    </div>
+                <!-- Botón ver todos los productos -->
+                <div class="productos-ver-mas">
+                    <a href="views/productos.html" class="btn btn-secondary" id="btn-ver-catalogo">
+                        Ver catálogo completo →
+                    </a>
                 </div>
 
-                <!-- Tarjeta 4 -->
-                <div class="product-card">
-                    <img src="https://picsum.photos/id/127/400/300" alt="Jabón sólido">
-                    <div class="card-content">
-                        <span class="etiqueta-eco">Zero Waste</span>
-                        <h3>Jabón Sólido de Avena</h3>
-                        <p class="precio">$6.500</p>
-                        <a href="#" class="btn-card">Comprar</a>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 5 -->
-                <div class="product-card">
-                    <img src="https://picsum.photos/id/94/400/300" alt="Bombillas reutilizables">
-                    <div class="card-content">
-                        <span class="etiqueta-eco">Reutilizable</span>
-                        <h3>Bombilla de Acero + Limpiapipas</h3>
-                        <p class="precio">$11.900</p>
-                        <a href="#" class="btn-card">Comprar</a>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 6 -->
-                <div class="product-card">
-                    <img src="https://picsum.photos/id/45/400/300" alt="Fundas de cera">
-                    <div class="card-content">
-                        <span class="etiqueta-eco">Compostable</span>
-                        <h3>Fundas de Cera de Abeja</h3>
-                        <p class="precio">$19.900</p>
-                        <a href="#" class="btn-card">Comprar</a>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
