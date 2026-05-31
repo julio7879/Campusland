@@ -1,0 +1,24 @@
+/* ===== ESTILOS BASE Y RESEO GLOBAL ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-enlaces);
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-boton-hover);
+}

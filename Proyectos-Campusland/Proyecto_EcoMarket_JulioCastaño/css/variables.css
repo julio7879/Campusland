@@ -5,19 +5,12 @@
     --turquesa: #31B3BA;
     --verde-neon: #2DFF51;
     --verde-vibrante: #11CC00;
-    --verde-neon: #2DFF51;
-    --verde-vibrante: #11CC00;
-    --color-boton-cta: var(--verde-neon);
-    --color-boton-hover: var(--verde-vibrante);
-
 
     /* Colores neutros */
     --blanco: #FFFFFF;
     --fondo-suave: #F5F5DC;
-    --beigecalido: #F5F1E8;
-    /* beige natural */
-    --light-gray: #EAEAEA;
-    /* Bordes y separadores */
+    --beigecalido: #F5F1E8; /* beige natural */
+    --light-gray: #EAEAEA;  /* Bordes y separadores */
     --texto-oscuro: #0F172A;
 
     /* Tokens semánticos (para qué se usa cada color) */

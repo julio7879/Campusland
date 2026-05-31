@@ -1,6 +1,6 @@
 /* ===== COMPONENTES REUTILIZABLES ===== */
 
-/* Botón CTA principal */
+/* Botón CTA base */
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -18,13 +18,7 @@
     background: linear-gradient(135deg, var(--verde-neon), var(--verde-vibrante));
     color: var(--texto-oscuro);
     padding: 0.8rem 1.8rem;
-    border-radius: 40px;
     font-weight: bold;
-    transition: all 0.25s ease;
-    border: none;
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
 }
 
 .btn-primario:hover {
@@ -32,7 +26,6 @@
     box-shadow: 0 8px 20px rgba(45, 255, 81, 0.3);
     background: linear-gradient(135deg, var(--verde-vibrante), var(--verde-neon));
     color: var(--texto-oscuro);
-    /* siempre oscuro para contraste */
 }
 
 /* Botón secundario (borde transparente) */
@@ -41,8 +34,6 @@
     border: 2px solid var(--blanco);
     color: var(--blanco);
     padding: 0.8rem 1.8rem;
-    border-radius: 40px;
-    transition: all 0.25s ease;
 }
 
 .btn-secundario:hover {
@@ -51,79 +42,306 @@
     transform: translateY(-3px);
 }
 
-/* Botón de tarjeta (Comprar) */
-.btn-card {
-    background: var(--turquesa);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 30px;
+
+/* ===== COMPONENTE HERO COMPARTIDO ===== */
+.hero,
+.hero-pagina {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4.5rem 3rem;
+    margin-bottom: 2.5rem;
+    color: var(--blanco);
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.hero-contenido {
+    max-width: 600px;
+    margin: 0;
+}
+
+.hero-badge,
+.hero-pagina .badge {
     display: inline-block;
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
+    background: rgba(45, 255, 81, 0.2);
+    border: 1px solid var(--verde-neon);
+    color: var(--verde-neon);
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(5px);
+}
+
+.hero-contenido h1,
+.hero-pagina h1 {
+    color: var(--blanco);
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+}
+
+.hero-contenido p,
+.hero-pagina__intro {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.8rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    line-height: 1.5;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+
+/* ===== CABECERAS DE SECCIÓN ===== */
+.section-header {
     text-align: center;
+    margin-bottom: 2.5rem;
 }
 
-.btn-card:hover {
-    background: var(--verde-vibrante);
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--verde-bosque);
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
     color: var(--texto-oscuro);
-    transform: scale(1.02);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1rem;
 }
 
-/* Tarjeta de producto */
+
+/* ===== ETIQUETAS (BADGES) ===== */
+.badge {
+    display: inline-block;
+    background: rgba(49, 179, 186, 0.15);
+    color: var(--turquesa);
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    backdrop-filter: blur(4px);
+    letter-spacing: 0.5px;
+}
+
+
+/* ===== TARJETA DE PRODUCTO ===== */
 .product-card {
     background: var(--color-superficie);
-    border-radius: var(--radio-borde);
+    border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: var(--sombra-suave);
-    transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1), box-shadow 0.3s ease;
+    border: 1px solid var(--light-gray);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .product-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--verde-oliva);
 }
 
-.product-card img {
-    transition: transform 0.4s ease;
+/* Contenedor de la imagen del producto */
+.product-image {
+    position: relative;
+    height: 210px;
+    overflow: hidden;
+    background: var(--beigecalido);
 }
 
-.product-card:hover img {
-    transform: scale(1.02);
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-texto-principal);
+/* Zoom suave en hover */
+.product-card:hover .product-image img {
+    transform: scale(1.08);
 }
 
-.precio {
+/* Etiqueta de producto (Eco / Nuevo / etc.) */
+.product-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--verde-bosque);
+    color: var(--blanco);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.22rem 0.65rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    z-index: 2;
+}
+
+/* Información del producto */
+.product-info {
+    padding: var(--space-sm);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info h3 {
+    font-size: 0.98rem;
+    margin-bottom: 0.35rem;
+    color: var(--texto-oscuro);
+}
+
+.product-info p {
+    font-size: 0.82rem;
+    margin: 0;
+    flex: 1;
+    line-height: 1.55;
+}
+
+/* Pie de la tarjeta: precio + botón */
+.product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--light-gray);
+}
+
+/* Precio en verde */
+.product-price {
     font-size: 1.3rem;
-    font-weight: bold;
-    color: var(--color-texto-secundario);
-    margin: 0.5rem 0;
+    font-weight: 800;
+    color: var(--verde-bosque);
+    line-height: 1;
 }
 
-.etiqueta-eco {
-    display: inline-block;
-    background-color: var(--verde-oliva);
-    color: white;
-    font-size: 0.75rem;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    margin-bottom: 0.75rem;
+.product-price small {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--texto-oscuro);
+    display: block;
+    margin-top: 0.1rem;
+}
+
+/* Botón Comprar en la tarjeta */
+.btn-comprar {
+    background-color: var(--turquesa);
+    color: var(--blanco);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--fuente-principal);
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.btn-comprar:hover {
+    background-color: var(--verde-bosque);
+    color: var(--blanco);
+    transform: scale(1.05);
 }
 
 
-/* Botón ver más */
-.ver-mas-container {
+/* ===== TARJETAS DE BENEFICIO / IMPACTO ===== */
+.beneficios-grid {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.beneficio-card {
+    flex: 1;
+    min-width: 260px;
+    max-width: 360px;
+    background: var(--beigecalido);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg) var(--space-md);
     text-align: center;
-    margin-top: 3rem;
+    border: 1px solid rgb(233, 233, 233);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Decoración de fondo */
+.beneficio-card::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(46, 125, 50, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.beneficio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(46, 125, 50, 0.2);
+}
+
+/* Ícono circular del beneficio */
+.beneficio-icon {
+    width: 76px;
+    height: 76px;
+    background: linear-gradient(135deg,
+            rgba(46, 125, 50, 0.12) 0%,
+            rgba(129, 199, 132, 0.2) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-sm);
+    font-size: 2.2rem;
+    transition: var(--transition);
+}
+
+.beneficio-card:hover .beneficio-icon {
+    transform: scale(1.12) rotate(5deg);
+    background: linear-gradient(135deg,
+            rgba(46, 125, 50, 0.2) 0%,
+            rgba(129, 199, 132, 0.35) 100%);
+}
+
+.beneficio-card h3 {
+    color: var(--texto-oscuro);
+    margin-bottom: 0.6rem;
+    font-size: 1.1rem;
+}
+
+.beneficio-card p {
+    font-size: 0.88rem;
+    margin: 0;
+    line-height: 1.65;
 }
 
 
 /* ===== COMPONENTES DEL CATÁLOGO ===== */
+
 /* Barra de búsqueda */
 .busqueda {
     margin-bottom: 1.5rem;
