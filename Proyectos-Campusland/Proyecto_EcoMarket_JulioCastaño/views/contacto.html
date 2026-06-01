@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>OrganicGo | Contacto</title>
+    <meta name="description"
+        content="Contáctate con EcoMarket. Formulario de contacto, correo electrónico, teléfono y redes sociales. Respondemos en menos de 24 horas.">
+    <meta name="author" content="Julio Castaño">
+
+    <!-- Hojas de estilo CSS (rutas relativas desde views/) -->
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+       HEADER – Encabezado fijo
+       ========================================== -->
+    <header class="header">
+        <a href="../index.html" class="logo">
+            <img src="../img/icons/gemini-svg (1).svg?v=2" alt="EcoMarket Logo" class="logo-img">
+            <img src="../img/hero/gemini-svg.svg" alt="Mascota" class="mascota-logo-img">
+        </a>
+        <nav class="nav">
+            <a href="../index.html">Inicio</a>
+            <a href="productos.html">Catálogo</a>
+            <a href="sobre-nosotros.html">Sobre Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+
+    <!-- ==========================================
+       CONTENIDO PRINCIPAL
+       ========================================== -->
+    <main>
+
+        <!-- HERO DE SECCIÓN -->
+        <section class="hero-pagina hero-pagina--contacto" aria-label="Encabezado de contacto">
+            <div class="hero-contenido">
+                <span class="badge">Contáctanos</span>
+                <h1>Estamos aquí para ti</h1>
+                <p class="hero-pagina__intro">
+                    ¿Tienes alguna pregunta sobre nuestros productos o pedidos?
+                    Escríbenos y te responderemos en menos de 24 horas.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- SECCIÓN DE CONTACTO COMPLETA -->
+        <section class="contacto-section section" aria-label="Información de contacto y formulario">
+            <div class="container">
+                <div class="contacto-grid">
+
+                    <!-- Información de contacto -->
+                    <div class="contact-info">
+                        <h2>Hablemos 🌱</h2>
+                        <p>
+                            Nuestro equipo de atención al cliente está disponible de lunes a
+                            viernes de 8:00 a.m. a 6:00 p.m. (hora Colombia). ¡Queremos ayudarte!
+                        </p>
+
+                        <!-- Items de contacto -->
+                        <div class="contact-item">
+                            <span class="contact-icon" aria-hidden="true">✉️</span>
+                            <p>info@ecocommerce.co</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-icon" aria-hidden="true">📞</span>
+                            <p>+57 (300) 123-4567</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-icon" aria-hidden="true">📍</span>
+                            <p>Calle 12 # 45-67, Bogotá, Colombia</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-icon" aria-hidden="true">🕐</span>
+                            <p>Lun – Vie: 8:00 a.m. – 6:00 p.m.</p>
+                        </div>
+
+                        <!-- Redes sociales -->
+                        <div class="contact-socials">
+                            <h4>Síguenos en redes sociales</h4>
+                            <div class="contact-social-links">
+                                <a href="#" class="contact-social-icon" aria-label="Facebook de EcoMarket">📘</a>
+                                <a href="#" class="contact-social-icon" aria-label="Instagram de EcoMarket">📸</a>
+                                <a href="#" class="contact-social-icon" aria-label="Twitter de EcoMarket">🐦</a>
+                                <a href="#" class="contact-social-icon" aria-label="YouTube de EcoMarket">▶️</a>
+                                <a href="#" class="contact-social-icon" aria-label="TikTok de EcoMarket">🎵</a>
+                            </div>
+                        </div>
+
+                        <!-- Preguntas frecuentes -->
+                        <div class="faq-box">
+                            <h4 class="faq-box__titulo">📋 Preguntas frecuentes</h4>
+                            <p class="faq-box__item"><strong>¿Cuánto tarda el envío?</strong>3-5 días hábiles a todo
+                                Colombia.</p>
+                            <p class="faq-box__item"><strong>¿Hacen devoluciones?</strong>Sí, hasta 30 días después de
+                                la compra.</p>
+                            <p class="faq-box__item faq-box__item--ultimo"><strong>¿Tienen tienda física?</strong>Por
+                                ahora solo vendemos en línea.</p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Formulario de contacto -->
+                    <div class="contact-form">
+                        <h3>Envíanos un mensaje</h3>
+
+                        <form action="#" method="POST" novalidate>
+
+                            <!-- Campo: Nombre -->
+                            <div class="form-group">
+                                <label for="nombre">Nombre completo</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Ej: María García"
+                                    autocomplete="name">
+                            </div>
+
+                            <!-- Campo: Correo electrónico -->
+                            <div class="form-group">
+                                <label for="correo">Correo electrónico</label>
+                                <input type="email" id="correo" name="correo" placeholder="Ej: maria@email.com"
+                                    autocomplete="email">
+                            </div>
+
+                            <!-- Campo: Asunto -->
+                            <div class="form-group">
+                                <label for="asunto">Asunto</label>
+                                <input type="text" id="asunto" name="asunto" placeholder="Ej: Consulta sobre mi pedido">
+                            </div>
+
+                            <!-- Campo: Mensaje -->
+                            <div class="form-group">
+                                <label for="mensaje">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos en qué podemos ayudarte..."
+                                    rows="5"></textarea>
+                            </div>
+
+                            <!-- Botón enviar -->
+                            <button type="submit" class="btn btn-primario btn-form-submit" id="btn-enviar-contacto">
+                                Enviar mensaje 🌿
+                            </button>
+
+                            <!-- Nota -->
+                            <p class="form-note">
+                                * Formulario de demostración. Los datos no serán procesados.
+                            </p>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="contenedor-footer">
+            <div class="columna-footer">
+                <h4>📬 Contacto</h4>
+                <p>📧 <a href="mailto:hola@ecomarket.com">hola@ecomarket.com</a></p>
+                <p>📞 <a href="tel:+573001234567">+57 300 123 4567</a></p>
+            </div>
+            <div class="columna-footer">
+                <h4>🌱 Redes</h4>
+                <ul class="redes-sociales">
+                    <li><a href="#">📷 Instagram</a></li>
+                    <li><a href="#">📘 Facebook</a></li>
+                    <li><a href="#">🐦 Twitter</a></li>
+                </ul>
+            </div>
+            <div class="columna-footer">
+                <h4>📜 Legal</h4>
+                <ul class="legales">
+                    <li><a href="#">Aviso de privacidad</a></li>
+                    <li><a href="#">Política de cookies</a></li>
+                    <li><a href="#">Términos de uso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 OrganicGo – Productos sostenibles para un futuro mejor</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
