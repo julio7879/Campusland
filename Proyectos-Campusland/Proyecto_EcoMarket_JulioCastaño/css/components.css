@@ -23,7 +23,6 @@
 
 .btn-primario:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(45, 255, 81, 0.3);
     background: linear-gradient(135deg, var(--verde-vibrante), var(--verde-neon));
     color: var(--texto-oscuro);
 }
@@ -126,9 +125,9 @@
     display: inline-block;
     background: rgba(49, 179, 186, 0.15);
     color: var(--turquesa);
-    padding: 0.3rem 1rem;
+    padding: 1rem 1rem;
     border-radius: 30px;
-    font-size: 0.85rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
     backdrop-filter: blur(4px);
@@ -463,4 +462,10 @@
 .paginacion .activo {
     background-color: var(--verde-oliva);
     color: white;
+}
+
+/*Body mixto*/
+.body-mixto {
+    background: linear-gradient(rgba(245, 241, 232, 0.80), rgba(420, 450, 250, 0.85)50%);
+
 }

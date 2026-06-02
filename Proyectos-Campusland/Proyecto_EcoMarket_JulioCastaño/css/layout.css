@@ -9,5 +9,21 @@
 }
 
 .section {
-    padding: var(--space-xl) 0; /* 80px vertical padding for elegant breathing room */
+    padding: var(--space-xl) 0;
+    /* 80px vertical padding for elegant breathing room */
+}
+
+/* Layout de dos columnas */
+.layout-catalogo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* Responsividad: Escritorio y Tablet */
+@media (min-width: 992px) {
+    .layout-catalogo {
+        grid-template-columns: 280px 1fr;
+    }
 }
