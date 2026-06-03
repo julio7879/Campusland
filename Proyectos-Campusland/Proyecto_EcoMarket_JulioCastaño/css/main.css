@@ -1,0 +1,20 @@
+/* Direcciones de Estilos */
+
+/* Variables */
+@import url('variables.css');
+/* Base (Estilos Globales) */
+@import url('base.css');
+/* Layout */
+@import url('layout.css');
+/* Componentes */
+@import url('components.css');
+/* Animaciones */
+@import url('animations.css');
+
+/* Vistas Específicas */
+@import url('diseñoVistas/header.css');
+@import url('diseñoVistas/footer.css');
+@import url('diseñoVistas/home.css');
+@import url('diseñoVistas/catalogo.css');
+@import url('diseñoVistas/sobre-nosotros.css');
+@import url('diseñoVistas/contacto.css');

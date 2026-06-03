@@ -1,0 +1,252 @@
+/* ===== ESTILOS ESPECÍFICOS DE LA VISTA DE CONTACTO ===== */
+
+/* Hero de la página de contacto */
+.hero-pagina--contacto {
+    background: linear-gradient(90deg, rgba(1, 66, 60, 0.95) 45%, rgba(1, 66, 60, 0.3) 100%),
+        url('../../img/hero/hero_contacto.png') center/cover no-repeat;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+/* Grid de la sección contacto */
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+@media (min-width: 992px) {
+    .contacto-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 4rem;
+    }
+}
+
+/* Tarjetas base de Información y Formulario */
+.contact-info,
+.contact-form {
+    background: var(--color-superficie);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--light-gray);
+    transition: var(--transition);
+}
+
+.contact-info:hover,
+.contact-form:hover {
+    box-shadow: var(--shadow-md);
+    border-color: rgba(46, 125, 50, 0.15);
+}
+
+/* Columna de Información */
+.contact-info h2 {
+    color: var(--verde-bosque);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.contact-info > p {
+    color: var(--texto-oscuro);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Elementos de contacto individuales */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.contact-icon {
+    font-size: 1.35rem;
+    background: var(--beigecalido);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--verde-bosque);
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.contact-item:hover .contact-icon {
+    transform: scale(1.12);
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.1), rgba(129, 199, 132, 0.25));
+}
+
+.contact-item p {
+    margin: 0;
+    color: var(--texto-oscuro);
+    font-size: 0.98rem;
+    font-weight: 500;
+}
+
+/* Redes sociales */
+.contact-socials {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--light-gray);
+}
+
+.contact-socials h4 {
+    color: var(--verde-bosque);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.contact-social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.contact-social-icon {
+    font-size: 1.4rem;
+    background: var(--beigecalido);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.contact-social-icon:hover {
+    transform: translateY(-4px) scale(1.1);
+    background: var(--turquesa);
+    color: var(--blanco);
+}
+
+/* Preguntas Frecuentes */
+.faq-box {
+    margin-top: 2.5rem;
+    background: var(--beigecalido);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
+    border: 1px dashed rgba(46, 125, 50, 0.2);
+}
+
+.faq-box__titulo {
+    color: var(--verde-bosque);
+    font-size: 1.15rem;
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+}
+
+.faq-box__item {
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+}
+
+.faq-box__item strong {
+    color: var(--verde-oliva);
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.faq-box__item--ultimo {
+    margin-bottom: 0;
+}
+
+/* Columna de Formulario */
+.contact-form h3 {
+    color: var(--verde-bosque);
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--verde-oliva);
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.9rem 1.25rem;
+    border: 2px solid var(--light-gray);
+    border-radius: var(--radius-md);
+    font-family: var(--fuente-principal);
+    font-size: 0.95rem;
+    transition: var(--transition);
+    background-color: var(--blanco);
+    color: var(--texto-oscuro);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--turquesa);
+    box-shadow: 0 0 0 4px rgba(49, 179, 186, 0.15);
+    background-color: var(--blanco);
+}
+
+.btn-form-submit {
+    width: 100%;
+    margin-top: 1.25rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    border-radius: var(--radius-full);
+}
+
+.form-note {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-top: 1.25rem;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* Responsividad para móviles del Hero en contacto */
+@media (max-width: 768px) {
+    .hero-pagina--contacto {
+        padding: 3.5rem 1.5rem;
+        background: linear-gradient(180deg, rgba(1, 66, 60, 0.95) 60%, rgba(1, 66, 60, 0.6) 100%),
+            url('../../img/hero/hero_eco.png') center/cover no-repeat;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .hero-pagina--contacto .hero-mascota {
+        max-width: 180px;
+        margin-top: 1.5rem;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 1.75rem;
+    }
+}

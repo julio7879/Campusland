@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 120" width="450" height="120">
+  <g transform="translate(10, 0)">
+    <circle cx="60" cy="60" r="50" fill="#01423C" />
+    <circle cx="60" cy="60" r="42" fill="none" stroke="#3E6C29" stroke-width="3" opacity="0.4" />
+    <path d="M60 25 C35 45 35 75 60 95 C60 75 48 55 60 25 Z" fill="#31B3BA" />
+    <path d="M60 25 C85 45 85 75 60 95 C60 75 72 55 60 25 Z" fill="#2DFF51" />
+    <path d="M60 40 L60 90" stroke="#11CC00" stroke-width="4" stroke-linecap="round" />
+  </g>
+  
+  <text x="140" y="65" 
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+        font-size="42" 
+        font-weight="900" 
+        fill="#01423C" 
+        letter-spacing="1">
+    ORGANIC<tspan fill="#3E6C29" font-weight="300">GO</tspan>
+  </text>
+  
+  <text x="142" y="90" 
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+        font-size="14" 
+        font-weight="700" 
+        fill="#31B3BA" 
+        letter-spacing="6" 
+        text-transform="uppercase">
+    TIENDA ECOLÓGICA
+  </text>
+</svg>
