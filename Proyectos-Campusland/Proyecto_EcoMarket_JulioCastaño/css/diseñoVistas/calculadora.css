@@ -1,0 +1,621 @@
+/* ===== ESTILOS CALCULADORA (CSS PURO) ===== */
+.calculadora-pagina {
+    padding: 3rem 1.5rem;
+    background-color: var(--beigecalido);
+    min-height: calc(100vh - 160px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Encabezado */
+.calculadora-encabezado {
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.calculadora-encabezado .subtitulo {
+    color: var(--verde-bosque);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.calculadora-encabezado h1 {
+    font-size: 2.5rem;
+    color: var(--turquesa);
+    margin: 0.5rem 0;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.calculadora-encabezado p {
+    color: var(--verde-bosque);
+    font-size: 1rem;
+}
+
+/* Tarjeta principal */
+.calculadora-tarjeta-principal {
+    background: var(--blanco);
+    border-radius: var(--radius-md);
+    box-shadow: var(--sombra-suave);
+    border: 1px solid var(--light-gray);
+    width: 100%;
+    max-width: 650px;
+    padding: 2.5rem;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta-decoracion-barra {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35%;
+    height: 4px;
+    background-color: var(--verde-vibrante);
+    border-radius: 4px 0 0 0;
+}
+
+/* Títulos con Iconos */
+.seccion-titulo-con-icono {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.icono-circulo {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--verde-neon);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.seccion-titulo-con-icono h2 {
+    font-size: 1.25rem;
+    color: var(--verde-bosque);
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Secciones */
+.seccion-hogar {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.slider-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.slider-titulo {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--texto-oscuro);
+}
+
+.slider-valor-pill {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--verde-vibrante);
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* Range Slider */
+.custom-range-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: var(--radius-full);
+    outline: none;
+    margin: 1rem 0;
+}
+
+.custom-range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: var(--verde-bosque);
+    border: 3px solid var(--blanco);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+}
+
+.custom-range-slider::-webkit-slider-thumb:hover {
+    background: #3b82f6;
+    transform: scale(1.1);
+}
+
+.custom-range-slider::-moz-range-thumb {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: var(--verde-bosque);
+    border: 3px solid var(--blanco);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.slider-ticks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -0.25rem;
+    margin-bottom: 1rem;
+}
+
+.slider-ticks span {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+/* Tips */
+.info-tip {
+    display: flex;
+    gap: 0.5rem;
+    background-color: #f8fafc;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    border-left: px solid var(--verde-vibrante);
+    margin-top: 1rem;
+}
+
+.info-icon {
+    font-size: 0.9rem;
+}
+
+.info-tip p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+/* Transporte Section */
+.pregunta-transporte {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--texto-oscuro);
+    margin-bottom: 1rem;
+}
+
+.opciones-transporte-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.radio-transporte-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.tarjeta-opcion-transporte {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0.5rem;
+    background-color: #f8fafc;
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.tarjeta-opcion-transporte:hover {
+    background-color: #f1f5f9;
+}
+
+.transporte-icon-wrapper {
+    font-size: 1.5rem;
+    background-color: var(--blanco);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.transporte-label-text {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #475569;
+}
+
+/* Checked states for radio cards */
+#transporte-auto:checked~.calculadora-tarjeta-principal label[for="transporte-auto"],
+#transporte-publico:checked~.calculadora-tarjeta-principal label[for="transporte-publico"],
+#transporte-bici:checked~.calculadora-tarjeta-principal label[for="transporte-bici"] {
+    border-color: var(--verde-neon);
+    background-color: var(--blanco);
+    box-shadow: var(--shadow-md);
+}
+
+#transporte-auto:checked~.calculadora-tarjeta-principal label[for="transporte-auto"] .transporte-icon-wrapper,
+#transporte-publico:checked~.calculadora-tarjeta-principal label[for="transporte-publico"] .transporte-icon-wrapper,
+#transporte-bici:checked~.calculadora-tarjeta-principal label[for="transporte-bici"] .transporte-icon-wrapper {
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+#transporte-auto:checked~.calculadora-tarjeta-principal label[for="transporte-auto"] .transporte-label-text,
+#transporte-publico:checked~.calculadora-tarjeta-principal label[for="transporte-publico"] .transporte-label-text,
+#transporte-bici:checked~.calculadora-tarjeta-principal label[for="transporte-bici"] .transporte-label-text {
+    color: var(--verde-bosque);
+}
+
+/* KM Input field */
+.grupo-entrada-km {
+    margin-top: 1.5rem;
+}
+
+.entrada-km-titulo {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--texto-oscuro);
+    margin-bottom: 0.75rem;
+}
+
+.input-contenedor-icono {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1.2rem;
+    font-size: 1.1rem;
+    color: #94a3b8;
+}
+
+.input-km {
+    width: 100%;
+    padding: 0.85rem 6.5rem 0.85rem 3rem;
+    border: 2px solid var(--light-gray);
+    border-radius: var(--radius-sm);
+    font-family: var(--fuente-principal);
+    font-size: 0.95rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.input-km:focus {
+    border-color: var(--verde-neon);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.input-unidad {
+    position: absolute;
+    right: 1.2rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #94a3b8;
+}
+
+/* Button & Info */
+.seccion-calcular-boton {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn-calcular {
+    display: inline-block;
+    background-color: var(--verde-vibrante);
+    color: var(--blanco);
+    padding: 0.9rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+}
+
+.btn-calcular:hover {
+    background-color: var(--verde-bosque);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(1, 66, 60, 0.3);
+}
+
+.politica-texto {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: 1rem;
+    line-height: 1.4;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== MODAL & CALCULATOR LOGIC ===== */
+.calcular-trigger-checkbox {
+    display: none;
+}
+
+.resultados-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(9, 240, 217, 0.5);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#calcular-trigger:checked~.resultados-modal {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.resultados-modal-contenido {
+    background: var(--blanco);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    width: 90%;
+    max-width: 500px;
+    padding: 2.5rem;
+    position: relative;
+    text-align: center;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+#calcular-trigger:checked~.resultados-modal .resultados-modal-contenido {
+    transform: translateY(0);
+}
+
+.modal-cerrar {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    font-size: 1.1rem;
+    color: #94a3b8;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #f8fafc;
+    transition: var(--transition);
+}
+
+.modal-cerrar:hover {
+    background-color: #e2e8f0;
+}
+
+.resultados-modal-contenido h3 {
+    color: var(--verde-bosque);
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px dashed var(--light-gray);
+    padding-bottom: 0.75rem;
+}
+
+.resultados-intro {
+    font-size: 0.95rem;
+    color: #64748b;
+}
+
+.resultado-emisiones {
+    margin: 1rem 0;
+}
+
+.resultado-co2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--verde-bosque);
+}
+
+.resultado-unidad {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+.resultado-badges-container {
+    margin: 1.5rem 0;
+    background-color: #f8fafc;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+}
+
+.badge-display {
+    display: none;
+}
+
+.badge-display p {
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.comparison-badge {
+    display: inline-block;
+    padding: 0.3rem 0.85rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.badge-excelente-style {
+    background-color: rgba(76, 175, 80, 0.15);
+    color: #2e7d32;
+}
+
+.badge-moderado-style {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: #3b82f6;
+}
+
+.badge-alto-style {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #dc2626;
+}
+
+.resultado-consejos {
+    text-align: left;
+    background-color: #f8fafc;
+    padding: 1.25rem;
+    border-radius: var(--radius-sm);
+    border-top: 2px solid var(--verde-bosque);
+    margin-bottom: 1.5rem;
+}
+
+.resultado-consejos h4 {
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+    color: var(--verde-bosque);
+}
+
+.resultado-consejos ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    font-size: 0.8rem;
+    color: #475569;
+}
+
+.resultado-consejos li {
+    margin-bottom: 0.4rem;
+}
+
+.btn-volver {
+    display: inline-block;
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 0.75rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-volver:hover {
+    background-color: #e2e8f0;
+}
+
+/* CSS COUNTERS LOGIC */
+body {
+    counter-reset: co2-total 0;
+}
+
+#transporte-auto:checked {
+    counter-increment: co2-total 3200;
+}
+
+#transporte-publico:checked {
+    counter-increment: co2-total 1450;
+}
+
+#transporte-bici:checked {
+    counter-increment: co2-total 450;
+}
+
+.resultado-co2::after {
+    content: counter(co2-total);
+}
+
+/* Display modal badges conditionally */
+#transporte-auto:checked~.resultados-modal .badge-alto {
+    display: block;
+}
+
+#transporte-auto:checked~.resultados-modal .consejo-transporte-alto {
+    display: list-item;
+}
+
+#transporte-auto:checked~.resultados-modal .consejo-transporte-medio,
+#transporte-auto:checked~.resultados-modal .consejo-transporte-bajo {
+    display: none;
+}
+
+#transporte-publico:checked~.resultados-modal .badge-moderado {
+    display: block;
+}
+
+#transporte-publico:checked~.resultados-modal .consejo-transporte-medio {
+    display: list-item;
+}
+
+#transporte-publico:checked~.resultados-modal .consejo-transporte-alto,
+#transporte-publico:checked~.resultados-modal .consejo-transporte-bajo {
+    display: none;
+}
+
+#transporte-bici:checked~.resultados-modal .badge-excelente {
+    display: block;
+}
+
+#transporte-bici:checked~.resultados-modal .consejo-transporte-bajo {
+    display: list-item;
+}
+
+#transporte-bici:checked~.resultados-modal .consejo-transporte-alto,
+#transporte-bici:checked~.resultados-modal .consejo-transporte-medio {
+    display: none;
+}
+
+/* Responsive Grid */
+@media (max-width: 600px) {
+    .calculadora-tarjeta-principal {
+        padding: 1.5rem;
+    }
+
+    .opciones-transporte-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .tarjeta-opcion-transporte {
+        flex-direction: row;
+        gap: 1rem;
+        padding: 1rem;
+        justify-content: flex-start;
+    }
+
+    .transporte-icon-wrapper {
+        margin-bottom: 0;
+    }
+
+    .calculadora-encabezado h1 {
+        font-size: 2rem;
+    }
+}

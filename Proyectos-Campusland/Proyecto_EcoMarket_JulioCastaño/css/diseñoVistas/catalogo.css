@@ -1,4 +1,4 @@
-/* ===== CATÁLOGO ===== */
+/* CATÁLOGO */
 
 .pagina-catalogo {
     max-width: 1400px;
@@ -7,9 +7,7 @@
 }
 
 
-/* ==========================================
-   SIDEBAR DE FILTROS (STICKY & PREMIUM)
-   ========================================== */
+/* SIDEBAR DE FILTROS  */
 .sidebar-filtros {
     position: static;
 }
@@ -112,11 +110,11 @@
 }
 
 /* Lógica de botones activos puramente en CSS */
-#cat-todos:checked ~ .layout-catalogo .btn-todos,
-#cat-hogar:checked ~ .layout-catalogo .btn-hogar,
-#cat-moda:checked ~ .layout-catalogo .btn-moda,
-#cat-cuidado-personal:checked ~ .layout-catalogo .btn-cuidado-personal,
-#cat-alimentos:checked ~ .layout-catalogo .btn-alimentos {
+#cat-todos:checked~.layout-catalogo .btn-todos,
+#cat-hogar:checked~.layout-catalogo .btn-hogar,
+#cat-moda:checked~.layout-catalogo .btn-moda,
+#cat-cuidado-personal:checked~.layout-catalogo .btn-cuidado-personal,
+#cat-alimentos:checked~.layout-catalogo .btn-alimentos {
     background: var(--verde-oliva);
     color: var(--blanco);
     border-color: var(--verde-oliva);
@@ -124,10 +122,10 @@
 }
 
 /* Lógica de filtrado de productos puramente en CSS */
-#cat-hogar:checked ~ .layout-catalogo .grid-productos .product-card:not([data-category="hogar"]),
-#cat-moda:checked ~ .layout-catalogo .grid-productos .product-card:not([data-category="moda"]),
-#cat-cuidado-personal:checked ~ .layout-catalogo .grid-productos .product-card:not([data-category="cuidado-personal"]),
-#cat-alimentos:checked ~ .layout-catalogo .grid-productos .product-card:not([data-category="alimentos"]) {
+#cat-hogar:checked~.layout-catalogo .grid-productos .product-card:not([data-category="hogar"]),
+#cat-moda:checked~.layout-catalogo .grid-productos .product-card:not([data-category="moda"]),
+#cat-cuidado-personal:checked~.layout-catalogo .grid-productos .product-card:not([data-category="cuidado-personal"]),
+#cat-alimentos:checked~.layout-catalogo .grid-productos .product-card:not([data-category="alimentos"]) {
     display: none;
 }
 
@@ -204,9 +202,7 @@
     cursor: pointer;
 }
 
-/* ==========================================
-   BARRA SUPERIOR (BUSCADOR ESTILIZADO)
-   ========================================== */
+/* BARRA SUPERIOR  */
 .catalogo-principal {
     display: flex;
     flex-direction: column;
@@ -296,9 +292,7 @@
     border-color: var(--turquesa);
 }
 
-/* ==========================================
-   GRID DE PRODUCTOS Y ANIMACIÓN
-   ========================================== */
+/* GRID DE PRODUCTOS Y ANIMACIÓN */
 .grid-productos {
     display: grid;
     gap: 2rem;
