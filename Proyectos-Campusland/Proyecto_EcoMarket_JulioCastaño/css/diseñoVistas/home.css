@@ -2,11 +2,19 @@
 
 /* Hero: Personalización de Fondos y Altura */
 .hero {
-    background: linear-gradient(90deg, rgba(1, 66, 60, 0.95) 45%, rgba(1, 66, 60, 0.3) 100%),
+    background: linear-gradient(90deg, rgba(1, 66, 60, 0.95) 0%, rgba(1, 66, 60, 0.95) 100%),
         url('../../img/hero/hero_eco.png') center/cover no-repeat;
     min-height: 380px;
-    justify-content: space-between;
-    gap: 3rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-contenido {
+    margin: 0 auto;
+}
+
+.hero-buttons {
+    justify-content: center;
 }
 
 /* Mascota en el Hero */
@@ -69,6 +77,11 @@
     opacity: 0.1;
     pointer-events: none;
     z-index: 0;
+}
+
+.beneficios-accion {
+    margin-top: 3rem;
+    text-align: center;
 }
 
 .destacados::after {
@@ -260,5 +273,221 @@
     to {
         opacity: 1;
         transform: translateX(-50%) scale(1);
+    }
+}
+
+/* ===== REGISTRO DE VARIABLES PARA EL CONTADOR (CSS PURO) ===== */
+@property --horas {
+    syntax: "<integer>";
+    inherits: false;
+    initial-value: 8;
+}
+
+@property --minutos {
+    syntax: "<integer>";
+    inherits: false;
+    initial-value: 59;
+}
+
+@property --segundos {
+    syntax: "<integer>";
+    inherits: false;
+    initial-value: 59;
+}
+
+/* Animaciones de cuenta regresiva */
+@keyframes cuenta-horas {
+    from {
+        --horas: 8;
+    }
+
+    to {
+        --horas: 0;
+    }
+}
+
+@keyframes cuenta-minutos {
+    from {
+        --minutos: 59;
+    }
+
+    to {
+        --minutos: 0;
+    }
+}
+
+@keyframes cuenta-segundos {
+    from {
+        --segundos: 59;
+    }
+
+    to {
+        --segundos: 0;
+    }
+}
+
+/* ===== ESTILOS DEL BANNER FLASH SALE (OFERTA RELÁMPAGO) ===== */
+.flash-sale-banner {
+    background: linear-gradient(135deg, var(--verde-bosque) 0%, #036b61 100%);
+    color: var(--blanco);
+    padding: 2.5rem 1.5rem;
+    margin: 2.5rem auto;
+    max-width: 1200px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--verde-neon);
+}
+
+.flash-sale-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.flash-sale-urgencia {
+    flex: 1.5;
+    min-width: 280px;
+}
+
+.flash-sale-tag {
+    display: inline-block;
+    background-color: var(--verde-neon);
+    color: var(--verde-bosque);
+    padding: 0.35rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.flash-sale-urgencia h2 {
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--blanco);
+    font-weight: bold;
+}
+
+.flash-sale-urgencia p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--light-gray);
+    line-height: 1.4;
+}
+
+.flash-sale-temporizador {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    justify-content: center;
+    min-width: 260px;
+}
+
+.tiempo-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+    text-align: center;
+    min-width: 70px;
+    backdrop-filter: blur(5px);
+}
+
+.tiempo-numero {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--verde-neon);
+    line-height: 1.2;
+}
+
+/* Enlazar variables a pseudo-elementos usando CSS Counters */
+.tiempo-horas::after {
+    counter-reset: hrs var(--horas);
+    content: counter(hrs, decimal-leading-zero);
+    animation: cuenta-horas 28800s linear infinite;
+    /* 8 horas (8 * 3600s = 28800s) */
+}
+
+.tiempo-minutos::after {
+    counter-reset: mins var(--minutos);
+    content: counter(mins, decimal-leading-zero);
+    animation: cuenta-minutos 3600s linear infinite;
+    /* 60 minutos (60 * 60s = 3600s) */
+}
+
+.tiempo-segundos::after {
+    counter-reset: secs var(--segundos);
+    content: counter(secs, decimal-leading-zero);
+    animation: cuenta-segundos 60s linear infinite;
+    /* 60 segundos */
+}
+
+.tiempo-label {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--light-gray);
+    text-transform: uppercase;
+    margin-top: 0.25rem;
+    font-weight: 600;
+}
+
+.tiempo-separador {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--verde-neon);
+    margin-top: -1rem;
+}
+
+.flash-sale-cta {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.btn-comprar-ahora {
+    background-color: var(--verde-neon);
+    color: var(--texto-oscuro) !important;
+    padding: 0.9rem 2.2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: var(--radius-full);
+    box-shadow: 0 4px 10px rgba(45, 255, 81, 0.3);
+    transition: var(--transition);
+    border: 2px solid var(--verde-neon);
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-comprar-ahora:hover {
+    background-color: transparent;
+    color: var(--verde-neon) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(45, 255, 81, 0.5);
+}
+
+@media (max-width: 768px) {
+    .flash-sale-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .flash-sale-urgencia {
+        min-width: 100%;
+    }
+
+    .flash-sale-temporizador {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .flash-sale-cta {
+        width: 100%;
     }
 }

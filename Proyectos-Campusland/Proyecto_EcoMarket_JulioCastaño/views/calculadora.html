@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrganicGo | Calculadora</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body class="body-mixto">
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="../index.html" class="logo">
+            <img src="../img/icons/gemini-svg (1).svg?v=2" alt="OrganicGo Logo" class="logo-img">
+        </a>
+        <nav class="nav">
+            <a href="../index.html">Inicio</a>
+            <a href="productos.html">Catálogo</a>
+            <a href="sobre-nosotros.html">Sobre Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="calculadora-pagina">
+
+        <div class="calculadora-encabezado">
+            <span class="subtitulo">Calculadora</span>
+            <h1>Calcula tu Huella <br>de Carbono</h1>
+            <p>Descubre tu impacto ambiental y cómo mejorarlo. Completa el formulario para obtener tu estimación
+                personalizada.</p>
+        </div>
+
+        <!-- Triggers de estado para CSS puro -->
+        <input type="checkbox" id="calcular-trigger" class="calcular-trigger-checkbox">
+        <input type="radio" name="medio-transporte" id="transporte-auto" checked class="radio-transporte-input">
+        <input type="radio" name="medio-transporte" id="transporte-publico" class="radio-transporte-input">
+        <input type="radio" name="medio-transporte" id="transporte-bici" class="radio-transporte-input">
+
+        <!-- Formulario principal -->
+        <div class="calculadora-tarjeta-principal">
+            <div class="tarjeta-decoracion-barra"></div>
+
+            <!-- 1. Hogar -->
+            <div class="seccion-hogar">
+                <div class="seccion-titulo-con-icono">
+                    <span class="icono-circulo">🏠</span>
+                    <h2>1. Hogar</h2>
+                </div>
+
+                <div class="grupo-slider">
+                    <div class="slider-encabezado">
+                        <span class="slider-titulo">Consumo de Energía Mensual</span>
+                        <span class="slider-valor-pill">350 <small>kWh</small></span>
+                    </div>
+                    <input type="range" min="0" max="1000" value="350" class="custom-range-slider">
+                    <div class="slider-ticks">
+                        <span>0</span>
+                        <span>250</span>
+                        <span>500</span>
+                        <span>750</span>
+                        <span>1000+</span>
+                    </div>
+                    <div class="info-tip">
+                        <span class="info-icon">ℹ️</span>
+                        <p>El consumo promedio de un hogar es de aproximadamente 270 kWh. Consulta tu factura de luz
+                            para un dato exacto.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Transporte -->
+            <div class="seccion-transporte">
+                <div class="seccion-titulo-con-icono">
+                    <span class="icono-circulo">🚗</span>
+                    <h2>2. Transporte</h2>
+                </div>
+                <p class="pregunta-transporte">¿Cuál es tu medio de transporte principal?</p>
+
+                <div class="opciones-transporte-grid">
+                    <label for="transporte-auto" class="tarjeta-opcion-transporte">
+                        <span class="transporte-icon-wrapper">🚗</span>
+                        <span class="transporte-label-text">Auto Privado</span>
+                    </label>
+                    <label for="transporte-publico" class="tarjeta-opcion-transporte">
+                        <span class="transporte-icon-wrapper">🚌</span>
+                        <span class="transporte-label-text">Transporte Público</span>
+                    </label>
+                    <label for="transporte-bici" class="tarjeta-opcion-transporte">
+                        <span class="transporte-icon-wrapper">🚲</span>
+                        <span class="transporte-label-text">Bicicleta / A pie</span>
+                    </label>
+                </div>
+
+                <div class="grupo-entrada-km">
+                    <p class="entrada-km-titulo">Kilómetros recorridos mensualmente</p>
+                    <div class="input-contenedor-icono">
+                        <span class="input-icon">🚗</span>
+                        <input type="text" placeholder="Ej. 1200" class="input-km" required>
+                        <span class="input-unidad">KM / MES</span>
+                    </div>
+                    <div class="info-tip">
+                        <span class="info-icon">ℹ️</span>
+                        <p>Ingresa la distancia estimada de tus traslados habituales para calcular las emisiones.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="seccion-calcular-boton">
+                <label for="calcular-trigger" class="btn-calcular">Calcular Impacto ➔</label>
+                <p class="politica-texto">Al hacer clic, aceptas nuestra política de privacidad y el procesamiento de
+                    tus datos ambientales.</p>
+            </div>
+        </div>
+
+        <!-- MODAL DE RESULTADOS -->
+        <div class="resultados-modal">
+            <div class="resultados-modal-contenido">
+                <label for="calcular-trigger" class="modal-cerrar">✕</label>
+                <h3>📊 Tu Impacto Estimado en CO₂</h3>
+                <p class="resultados-intro">Tu huella de carbono estimada es de:</p>
+                <div class="resultado-emisiones">
+                    <span class="resultado-co2"></span>
+                    <span class="resultado-unidad">kg CO₂ / año</span>
+                </div>
+
+                <div class="resultado-badges-container">
+                    <div class="badge-display badge-excelente">
+                        <p>¡Eres un guardián del planeta! 🌱</p>
+                        <span class="comparison-badge badge-excelente-style">Huella Baja (Excelente)</span>
+                    </div>
+                    <div class="badge-display badge-moderado">
+                        <p>Tu huella está en el promedio sostenible. 🚶</p>
+                        <span class="comparison-badge badge-moderado-style">Huella Media (Normal)</span>
+                    </div>
+                    <div class="badge-display badge-alto">
+                        <p>Consumo elevado detectado. Recomendamos realizar cambios. ⚠️</p>
+                        <span class="comparison-badge badge-alto-style">Huella Alta (Atención)</span>
+                    </div>
+                </div>
+
+                <div class="resultado-consejos">
+                    <h4>🌱 Consejos para reducir tu impacto:</h4>
+                    <ul>
+                        <li class="consejo-transporte-alto">Considera compartir coche o usar transporte público algunos
+                            días.</li>
+                        <li class="consejo-transporte-alto">Para distancias cortas (menos de 2 km), prefiere caminar o
+                            ir en bicicleta.</li>
+                        <li class="consejo-transporte-medio">El transporte público reduce tu huella a la mitad frente al
+                            coche privado. ¡Sigue así!</li>
+                        <li class="consejo-transporte-bajo">¡Excelente elección! La movilidad activa tiene cero
+                            emisiones de CO₂.</li>
+                        <li>Usa bombillas LED de bajo consumo en el hogar y apaga dispositivos que no uses.</li>
+                        <li>Compra productos ecológicos y sin empaques plásticos en EcoMarket.</li>
+                    </ul>
+                </div>
+                <label for="calcular-trigger" class="btn-volver">Volver a calcular</label>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="contenedor-footer">
+            <div class="columna-footer">
+                <h4>📬 Contacto</h4>
+                <p>📧 <a href="mailto:hola@ecomarket.com">hola@ecomarket.com</a></p>
+                <p>📞 <a href="tel:+573001234567">+57 300 123 4567</a></p>
+            </div>
+            <div class="columna-footer">
+                <h4>🌱 Redes</h4>
+                <ul class="redes-sociales">
+                    <li><a href="#">📷 Instagram</a></li>
+                    <li><a href="#">📘 Facebook</a></li>
+                    <li><a href="#">🐦 Twitter</a></li>
+                </ul>
+            </div>
+            <div class="columna-footer">
+                <h4>📜 Legal</h4>
+                <ul class="legales">
+                    <li><a href="#">Aviso de privacidad</a></li>
+                    <li><a href="#">Política de cookies</a></li>
+                    <li><a href="#">Términos de uso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2026 EcoMarket. Diseñado para un futuro sostenible.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
