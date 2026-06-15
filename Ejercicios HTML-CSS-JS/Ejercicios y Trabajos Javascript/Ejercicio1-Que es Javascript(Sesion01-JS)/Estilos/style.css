@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+h1,
+h2 {
+    color: #333;
+}
+
+.producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#total-compra {
+    font-weight: bold;
+    color: green;
+    font-size: 1.2em;
+}
+
+#lista-carrito {
+    padding-left: 20px;
+    color: #555;
+}
+
+#total-compra {
+    font-weight: bold;
+    color: green;
+    font-size: 1.3em;
+}
