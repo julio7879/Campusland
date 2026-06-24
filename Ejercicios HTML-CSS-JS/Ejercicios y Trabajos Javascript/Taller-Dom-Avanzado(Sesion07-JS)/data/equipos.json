@@ -1,0 +1,96 @@
+{
+  "tema": "Manipulación avanzada del DOM",
+  "descripcion": "Datos educativos para crear tarjetas dinámicas en JavaScript.",
+  "equipos": [
+    {
+      "id": 1,
+      "nombre": "Colombia",
+      "codigo": "COL",
+      "grupo": "K",
+      "continente": "Sudamérica",
+      "confederacion": "CONMEBOL",
+      "destacado": true
+    },
+    {
+      "id": 2,
+      "nombre": "Argentina",
+      "codigo": "ARG",
+      "grupo": "J",
+      "continente": "Sudamérica",
+      "confederacion": "CONMEBOL",
+      "destacado": true
+    },
+    {
+      "id": 3,
+      "nombre": "Brasil",
+      "codigo": "BRA",
+      "grupo": "C",
+      "continente": "Sudamérica",
+      "confederacion": "CONMEBOL",
+      "destacado": true
+    },
+    {
+      "id": 4,
+      "nombre": "México",
+      "codigo": "MEX",
+      "grupo": "A",
+      "continente": "Norteamérica",
+      "confederacion": "CONCACAF",
+      "destacado": false
+    },
+    {
+      "id": 5,
+      "nombre": "Canadá",
+      "codigo": "CAN",
+      "grupo": "B",
+      "continente": "Norteamérica",
+      "confederacion": "CONCACAF",
+      "destacado": false
+    },
+    {
+      "id": 6,
+      "nombre": "Estados Unidos",
+      "codigo": "USA",
+      "grupo": "D",
+      "continente": "Norteamérica",
+      "confederacion": "CONCACAF",
+      "destacado": false
+    },
+    {
+      "id": 7,
+      "nombre": "España",
+      "codigo": "ESP",
+      "grupo": "H",
+      "continente": "Europa",
+      "confederacion": "UEFA",
+      "destacado": true
+    },
+    {
+      "id": 8,
+      "nombre": "Japón",
+      "codigo": "JPN",
+      "grupo": "F",
+      "continente": "Asia",
+      "confederacion": "AFC",
+      "destacado": false
+    },
+    {
+      "id": 9,
+      "nombre": "Marruecos",
+      "codigo": "MAR",
+      "grupo": "C",
+      "continente": "África",
+      "confederacion": "CAF",
+      "destacado": false
+    },
+    {
+      "id": 10,
+      "nombre": "Uruguay",
+      "codigo": "URU",
+      "grupo": "H",
+      "continente": "Sudamérica",
+      "confederacion": "CONMEBOL",
+      "destacado": false
+    }
+  ]
+}

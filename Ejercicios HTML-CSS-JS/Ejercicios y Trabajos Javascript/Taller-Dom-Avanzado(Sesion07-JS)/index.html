@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sesión 1.7 - DOM Avanzado</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <p class="tag">JavaScript + DOM</p>
+      <h1>Panel dinámico de equipos</h1>
+      <p>Laboratorio para crear, insertar, reemplazar y eliminar elementos del DOM.</p>
+    </header>
+
+    <section class="acciones">
+      <button id="btn-cargar">Cargar equipos JSON</button>
+      <button id="btn-agregar-final">Agregar al final</button>
+      <button id="btn-agregar-inicio">Agregar al inicio</button>
+      <button id="btn-aviso">Insertar aviso</button>
+      <button id="btn-resumen">Actualizar resumen</button>
+      <button id="btn-reemplazar-primera">Reemplazar primera tarjeta</button>
+    </section>
+
+    <section id="resumen" class="resumen">
+      <p>Resumen pendiente por actualizar.</p>
+    </section>
+
+    <section id="panel-equipos" class="panel">
+      <h2 id="titulo-panel">Equipos disponibles</h2>
+      <div id="lista-equipos" class="grid-equipos"></div>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
