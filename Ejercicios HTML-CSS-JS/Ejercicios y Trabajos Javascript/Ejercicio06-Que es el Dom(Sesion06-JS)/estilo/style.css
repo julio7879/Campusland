@@ -1,0 +1,117 @@
+body {
+    background-color: rgb(233, 232, 232);
+
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+header {
+    text-align: center;
+}
+
+.contenedor {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    color: black;
+    width: 800px;
+    margin-left: 27%;
+
+}
+
+
+.card {
+    border: 1px solid blue;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px;
+    margin-bottom: 15px;
+}
+
+#mensaje {
+    font-size: 1.5rem;
+    background-color: rgba(60, 73, 79, 0.15);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.botones button,
+.botones a {
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 8px;
+    background-color: #2563eb;
+    padding: 10px 16px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.botones button:hover,
+.botones a:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.15);
+}
+
+.botones button:active,
+.botones a:active {
+    transform: translateY(0);
+}
+
+.botones button:disabled {
+    background-color: #e2e8f0;
+    color: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.botones a {
+    background-color: #0ea5e9;
+}
+
+.botones a:hover {
+    background-color: #0284c7;
+    box-shadow: 0 6px 12px rgba(14, 165, 233, 0.15);
+}
+
+.resultado-texto {
+    background-color: #e0f2fe;
+    border-left: 5px solid #0284c7;
+    color: #0f172a;
+}
+
+.resultado-html {
+    background-color: #dcfce7;
+    border-left: 5px solid #16a34a;
+    color: #14532d;
+}
+
+.resultado-limpio {
+    background-color: #f8fafc;
+    border-left: 5px solid #94a3b8;
+    color: #475569;
+}
+
+.oculto {
+    display: none;
+}

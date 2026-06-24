@@ -1,0 +1,885 @@
+{
+  "torneo": "FIFA World Cup 2026",
+  "descripcion": "Archivo JSON educativo para practicar fetch, Promesas y async/await en JavaScript.",
+  "totalEquipos": 48,
+  "grupos": [
+    {
+      "grupo": "A",
+      "equipos": [
+        {
+          "id": 1,
+          "nombre": "México",
+          "codigo": "MEX",
+          "confederacion": "CONCACAF",
+          "continente": "Norteamérica",
+          "esAnfitrion": true
+        },
+        {
+          "id": 2,
+          "nombre": "Sudáfrica",
+          "codigo": "RSA",
+          "confederacion": "CAF",
+          "continente": "África",
+          "esAnfitrion": false
+        },
+        {
+          "id": 3,
+          "nombre": "Corea del Sur",
+          "codigo": "KOR",
+          "confederacion": "AFC",
+          "continente": "Asia",
+          "esAnfitrion": false
+        },
+        {
+          "id": 4,
+          "nombre": "Chequia",
+          "codigo": "CZE",
+          "confederacion": "UEFA",
+          "continente": "Europa",
+          "esAnfitrion": false
+        }
+      ]
+    },
+    {
+      "grupo": "B",
+      "equipos": [
+        {
+          "id": 5,
+          "nombre": "Canadá",
+          "codigo": "CAN",
+          "confederacion": "CONCACAF",
+          "continente": "Norteamérica",
+          "esAnfitrion": true
+        },
+        {
+          "id": 6,
+          "nombre": "Bosnia y Herzegovina",
+          "codigo": "BIH",
+          "confederacion": "UEFA",
+          "continente": "Europa",
+          "esAnfitrion": false
+        },
+        {
+          "id": 7,
+          "nombre": "Catar",
+          "codigo": "QAT",
+          "confederacion": "AFC",
+          "continente": "Asia",
+          "esAnfitrion": false
+        },
+        {
+          "id": 8,
+          "nombre": "Suiza",
+          "codigo": "SUI",
+          "confederacion": "UEFA",
+          "continente": "Europa",
+          "esAnfitrion": false
+        }
+      ]
+    },
+    {
+      "grupo": "C",
+      "equipos": [
+        {
+          "id": 9,
+          "nombre": "Brasil",
+          "codigo": "BRA",
+          "confederacion": "CONMEBOL",
+          "continente": "Sudamérica",
+          "esAnfitrion": false
+        },
+        {
+          "id": 10,
+          "nombre": "Marruecos",
+          "codigo": "MAR",
+          "confederacion": "CAF",
+          "continente": "África",
+          "esAnfitrion": false
+        },
+        {
+          "id": 11,
+          "nombre": "Haití",
+          "codigo": "HTI",
+          "confederacion": "CONCACAF",
+          "continente": "Norteamérica",
+          "esAnfitrion": false
+        },
+        {
+          "id": 12,
+          "nombre": "Escocia",
+          "codigo": "SCO",
+          "confederacion": "UEFA",
+          "continente": "Europa",
+          "esAnfitrion": false
+        }
+      ]
+    },
+    {
+      "grupo": "D",
+      "equipos": [
+        {
+          "id": 13,
+          "nombre": "Estados Unidos",
+          "codigo": "USA",
+          "confederacion": "CONCACAF",
+          "continente": "Norteamérica",
+          "esAnfitrion": true
+        },
+        {
+          "id": 14,
+          "nombre": "Paraguay",
+          "codigo": "PAR",
+          "confederacion": "CONMEBOL",
+          "continente": "Sudamérica",
+          "esAnfitrion": false
+        },
+        {
+          "id": 15,
+          "nombre": "Australia",
+          "codigo": "AUS",
+          "confederacion": "AFC",
+          "continente": "Oceanía/Asia",
+          "esAnfitrion": false
+        },
+        {
+          "id": 16,
+          "nombre": "Turquía",
+          "codigo": "TUR",
+          "confederacion": "UEFA",
+          "continente": "Europa/Asia",
+          "esAnfitrion": false
+        }
+      ]
+    },
+    {
+      "grupo": "E",
+      "equipos": [
+        {
+          "id": 17,
+          "nombre": "Alemania",
+          "codigo": "GER",
+          "confederacion": "UEFA",
+          "continente": "Europa",
+          "esAnfitrion": false
+        },
+        {
+          "id": 18,
+          "nombre": "Curazao",
+          "codigo": "CUW",
+          "confederacion": "CONCACAF",
+          "continente": "Norteamérica",
+          "esAnfitrion": false
+        },
+        {
+          "id": 19,
+          "nombre": "Costa de Marfil",
+          "codigo": "CIV",
+          "confederacion": "CAF",
+          "continente": "África",
+          "esAnfitrion": false
+        },
+        {
+          "id": 20,
+          "nombre": "Ecuador",
+          "codigo": "ECU",
+          "confederacion": "CONMEBOL",
+          "continente": "Sudamérica",
+          "esAnfitrion": false
+        }
+      ]
+    },
+    {
+      "grupo": "F",
+      "equipos": [
+        {
+          "id": 21,
+          "nombre": "Países Bajos",
+          "codigo": "NED",
+          "confederacion": "UEFA",
+          "continente": "Europa",
+          "esAnfitrion": false
+        },
+        {
+          "id": 22,
+          "nombre": "Japón",
+          "codigo": "JPN",
+          "confederacion": "AFC",
+          "continente": "Asia",
+          "esAnfitrion": false
+        },
+        {
+          "id": 23,
+          "nombre": "Suecia",
+          "codigo": "SWE",
+          "confederacion": "UEFA",
+          "continente": "Europa",
+          "esAnfitrion": false
+        },
+        {
+          "id": 24,
+          "nombre": "Túnez",
+          "codigo": "TUN",
+          "confederacion": "CAF",
+          "continente": "África",
+          "esAnfitrion": false
+        }
+      ]
+    },
+    {
+      "grupo": "G",
+      "equipos": [
+        {
+          "id": 25,
+          "nombre": "Bélgica",
+          "codigo": "BEL",
+          "confederacion": "UEFA",
+          "continente": "Europa",
+          "esAnfitrion": false
+        },
+        {
+          "id": 26,
+          "nombre": "Egipto",
+          "codigo": "EGY",
+          "confederacion": "CAF",
+          "continente": "África",
+          "esAnfitrion": false
+        },
+        {
+          "id": 27,
+          "nombre": "Irán",
+          "codigo": "IRI",
+          "confederacion": "AFC",
+          "continente": "Asia",
+          "esAnfitrion": false
+        },
+        {
+          "id": 28,
+          "nombre": "Nueva Zelanda",
+          "codigo": "NZL",
+          "confederacion": "OFC",
+          "continente": "Oceanía",
+          "esAnfitrion": false
+        }
+      ]
+    },
+    {
+      "grupo": "H",
+      "equipos": [
+        {
+          "id": 29,
+          "nombre": "España",
+          "codigo": "ESP",
+          "confederacion": "UEFA",
+          "continente": "Europa",
+          "esAnfitrion": false
+        },
+        {
+          "id": 30,
+          "nombre": "Cabo Verde",
+          "codigo": "CPV",
+          "confederacion": "CAF",
+          "continente": "África",
+          "esAnfitrion": false
+        },
+        {
+          "id": 31,
+          "nombre": "Arabia Saudita",
+          "codigo": "KSA",
+          "confederacion": "AFC",
+          "continente": "Asia",
+          "esAnfitrion": false
+        },
+        {
+          "id": 32,
+          "nombre": "Uruguay",
+          "codigo": "URU",
+          "confederacion": "CONMEBOL",
+          "continente": "Sudamérica",
+          "esAnfitrion": false
+        }
+      ]
+    },
+    {
+      "grupo": "I",
+      "equipos": [
+        {
+          "id": 33,
+          "nombre": "Francia",
+          "codigo": "FRA",
+          "confederacion": "UEFA",
+          "continente": "Europa",
+          "esAnfitrion": false
+        },
+        {
+          "id": 34,
+          "nombre": "Senegal",
+          "codigo": "SEN",
+          "confederacion": "CAF",
+          "continente": "África",
+          "esAnfitrion": false
+        },
+        {
+          "id": 35,
+          "nombre": "Irak",
+          "codigo": "IRQ",
+          "confederacion": "AFC",
+          "continente": "Asia",
+          "esAnfitrion": false
+        },
+        {
+          "id": 36,
+          "nombre": "Noruega",
+          "codigo": "NOR",
+          "confederacion": "UEFA",
+          "continente": "Europa",
+          "esAnfitrion": false
+        }
+      ]
+    },
+    {
+      "grupo": "J",
+      "equipos": [
+        {
+          "id": 37,
+          "nombre": "Argentina",
+          "codigo": "ARG",
+          "confederacion": "CONMEBOL",
+          "continente": "Sudamérica",
+          "esAnfitrion": false
+        },
+        {
+          "id": 38,
+          "nombre": "Argelia",
+          "codigo": "DZA",
+          "confederacion": "CAF",
+          "continente": "África",
+          "esAnfitrion": false
+        },
+        {
+          "id": 39,
+          "nombre": "Austria",
+          "codigo": "AUT",
+          "confederacion": "UEFA",
+          "continente": "Europa",
+          "esAnfitrion": false
+        },
+        {
+          "id": 40,
+          "nombre": "Jordania",
+          "codigo": "JOR",
+          "confederacion": "AFC",
+          "continente": "Asia",
+          "esAnfitrion": false
+        }
+      ]
+    },
+    {
+      "grupo": "K",
+      "equipos": [
+        {
+          "id": 41,
+          "nombre": "Portugal",
+          "codigo": "POR",
+          "confederacion": "UEFA",
+          "continente": "Europa",
+          "esAnfitrion": false
+        },
+        {
+          "id": 42,
+          "nombre": "República Democrática del Congo",
+          "codigo": "COD",
+          "confederacion": "CAF",
+          "continente": "África",
+          "esAnfitrion": false
+        },
+        {
+          "id": 43,
+          "nombre": "Uzbekistán",
+          "codigo": "UZB",
+          "confederacion": "AFC",
+          "continente": "Asia",
+          "esAnfitrion": false
+        },
+        {
+          "id": 44,
+          "nombre": "Colombia",
+          "codigo": "COL",
+          "confederacion": "CONMEBOL",
+          "continente": "Sudamérica",
+          "esAnfitrion": false
+        }
+      ]
+    },
+    {
+      "grupo": "L",
+      "equipos": [
+        {
+          "id": 45,
+          "nombre": "Inglaterra",
+          "codigo": "ENG",
+          "confederacion": "UEFA",
+          "continente": "Europa",
+          "esAnfitrion": false
+        },
+        {
+          "id": 46,
+          "nombre": "Croacia",
+          "codigo": "CRO",
+          "confederacion": "UEFA",
+          "continente": "Europa",
+          "esAnfitrion": false
+        },
+        {
+          "id": 47,
+          "nombre": "Ghana",
+          "codigo": "GHA",
+          "confederacion": "CAF",
+          "continente": "África",
+          "esAnfitrion": false
+        },
+        {
+          "id": 48,
+          "nombre": "Panamá",
+          "codigo": "PAN",
+          "confederacion": "CONCACAF",
+          "continente": "Norteamérica",
+          "esAnfitrion": false
+        }
+      ]
+    }
+  ],
+  "equipos": [
+    {
+      "id": 1,
+      "nombre": "México",
+      "codigo": "MEX",
+      "grupo": "A",
+      "confederacion": "CONCACAF",
+      "continente": "Norteamérica",
+      "esAnfitrion": true
+    },
+    {
+      "id": 2,
+      "nombre": "Sudáfrica",
+      "codigo": "RSA",
+      "grupo": "A",
+      "confederacion": "CAF",
+      "continente": "África",
+      "esAnfitrion": false
+    },
+    {
+      "id": 3,
+      "nombre": "Corea del Sur",
+      "codigo": "KOR",
+      "grupo": "A",
+      "confederacion": "AFC",
+      "continente": "Asia",
+      "esAnfitrion": false
+    },
+    {
+      "id": 4,
+      "nombre": "Chequia",
+      "codigo": "CZE",
+      "grupo": "A",
+      "confederacion": "UEFA",
+      "continente": "Europa",
+      "esAnfitrion": false
+    },
+    {
+      "id": 5,
+      "nombre": "Canadá",
+      "codigo": "CAN",
+      "grupo": "B",
+      "confederacion": "CONCACAF",
+      "continente": "Norteamérica",
+      "esAnfitrion": true
+    },
+    {
+      "id": 6,
+      "nombre": "Bosnia y Herzegovina",
+      "codigo": "BIH",
+      "grupo": "B",
+      "confederacion": "UEFA",
+      "continente": "Europa",
+      "esAnfitrion": false
+    },
+    {
+      "id": 7,
+      "nombre": "Catar",
+      "codigo": "QAT",
+      "grupo": "B",
+      "confederacion": "AFC",
+      "continente": "Asia",
+      "esAnfitrion": false
+    },
+    {
+      "id": 8,
+      "nombre": "Suiza",
+      "codigo": "SUI",
+      "grupo": "B",
+      "confederacion": "UEFA",
+      "continente": "Europa",
+      "esAnfitrion": false
+    },
+    {
+      "id": 9,
+      "nombre": "Brasil",
+      "codigo": "BRA",
+      "grupo": "C",
+      "confederacion": "CONMEBOL",
+      "continente": "Sudamérica",
+      "esAnfitrion": false
+    },
+    {
+      "id": 10,
+      "nombre": "Marruecos",
+      "codigo": "MAR",
+      "grupo": "C",
+      "confederacion": "CAF",
+      "continente": "África",
+      "esAnfitrion": false
+    },
+    {
+      "id": 11,
+      "nombre": "Haití",
+      "codigo": "HTI",
+      "grupo": "C",
+      "confederacion": "CONCACAF",
+      "continente": "Norteamérica",
+      "esAnfitrion": false
+    },
+    {
+      "id": 12,
+      "nombre": "Escocia",
+      "codigo": "SCO",
+      "grupo": "C",
+      "confederacion": "UEFA",
+      "continente": "Europa",
+      "esAnfitrion": false
+    },
+    {
+      "id": 13,
+      "nombre": "Estados Unidos",
+      "codigo": "USA",
+      "grupo": "D",
+      "confederacion": "CONCACAF",
+      "continente": "Norteamérica",
+      "esAnfitrion": true
+    },
+    {
+      "id": 14,
+      "nombre": "Paraguay",
+      "codigo": "PAR",
+      "grupo": "D",
+      "confederacion": "CONMEBOL",
+      "continente": "Sudamérica",
+      "esAnfitrion": false
+    },
+    {
+      "id": 15,
+      "nombre": "Australia",
+      "codigo": "AUS",
+      "grupo": "D",
+      "confederacion": "AFC",
+      "continente": "Oceanía/Asia",
+      "esAnfitrion": false
+    },
+    {
+      "id": 16,
+      "nombre": "Turquía",
+      "codigo": "TUR",
+      "grupo": "D",
+      "confederacion": "UEFA",
+      "continente": "Europa/Asia",
+      "esAnfitrion": false
+    },
+    {
+      "id": 17,
+      "nombre": "Alemania",
+      "codigo": "GER",
+      "grupo": "E",
+      "confederacion": "UEFA",
+      "continente": "Europa",
+      "esAnfitrion": false
+    },
+    {
+      "id": 18,
+      "nombre": "Curazao",
+      "codigo": "CUW",
+      "grupo": "E",
+      "confederacion": "CONCACAF",
+      "continente": "Norteamérica",
+      "esAnfitrion": false
+    },
+    {
+      "id": 19,
+      "nombre": "Costa de Marfil",
+      "codigo": "CIV",
+      "grupo": "E",
+      "confederacion": "CAF",
+      "continente": "África",
+      "esAnfitrion": false
+    },
+    {
+      "id": 20,
+      "nombre": "Ecuador",
+      "codigo": "ECU",
+      "grupo": "E",
+      "confederacion": "CONMEBOL",
+      "continente": "Sudamérica",
+      "esAnfitrion": false
+    },
+    {
+      "id": 21,
+      "nombre": "Países Bajos",
+      "codigo": "NED",
+      "grupo": "F",
+      "confederacion": "UEFA",
+      "continente": "Europa",
+      "esAnfitrion": false
+    },
+    {
+      "id": 22,
+      "nombre": "Japón",
+      "codigo": "JPN",
+      "grupo": "F",
+      "confederacion": "AFC",
+      "continente": "Asia",
+      "esAnfitrion": false
+    },
+    {
+      "id": 23,
+      "nombre": "Suecia",
+      "codigo": "SWE",
+      "grupo": "F",
+      "confederacion": "UEFA",
+      "continente": "Europa",
+      "esAnfitrion": false
+    },
+    {
+      "id": 24,
+      "nombre": "Túnez",
+      "codigo": "TUN",
+      "grupo": "F",
+      "confederacion": "CAF",
+      "continente": "África",
+      "esAnfitrion": false
+    },
+    {
+      "id": 25,
+      "nombre": "Bélgica",
+      "codigo": "BEL",
+      "grupo": "G",
+      "confederacion": "UEFA",
+      "continente": "Europa",
+      "esAnfitrion": false
+    },
+    {
+      "id": 26,
+      "nombre": "Egipto",
+      "codigo": "EGY",
+      "grupo": "G",
+      "confederacion": "CAF",
+      "continente": "África",
+      "esAnfitrion": false
+    },
+    {
+      "id": 27,
+      "nombre": "Irán",
+      "codigo": "IRI",
+      "grupo": "G",
+      "confederacion": "AFC",
+      "continente": "Asia",
+      "esAnfitrion": false
+    },
+    {
+      "id": 28,
+      "nombre": "Nueva Zelanda",
+      "codigo": "NZL",
+      "grupo": "G",
+      "confederacion": "OFC",
+      "continente": "Oceanía",
+      "esAnfitrion": false
+    },
+    {
+      "id": 29,
+      "nombre": "España",
+      "codigo": "ESP",
+      "grupo": "H",
+      "confederacion": "UEFA",
+      "continente": "Europa",
+      "esAnfitrion": false
+    },
+    {
+      "id": 30,
+      "nombre": "Cabo Verde",
+      "codigo": "CPV",
+      "grupo": "H",
+      "confederacion": "CAF",
+      "continente": "África",
+      "esAnfitrion": false
+    },
+    {
+      "id": 31,
+      "nombre": "Arabia Saudita",
+      "codigo": "KSA",
+      "grupo": "H",
+      "confederacion": "AFC",
+      "continente": "Asia",
+      "esAnfitrion": false
+    },
+    {
+      "id": 32,
+      "nombre": "Uruguay",
+      "codigo": "URU",
+      "grupo": "H",
+      "confederacion": "CONMEBOL",
+      "continente": "Sudamérica",
+      "esAnfitrion": false
+    },
+    {
+      "id": 33,
+      "nombre": "Francia",
+      "codigo": "FRA",
+      "grupo": "I",
+      "confederacion": "UEFA",
+      "continente": "Europa",
+      "esAnfitrion": false
+    },
+    {
+      "id": 34,
+      "nombre": "Senegal",
+      "codigo": "SEN",
+      "grupo": "I",
+      "confederacion": "CAF",
+      "continente": "África",
+      "esAnfitrion": false
+    },
+    {
+      "id": 35,
+      "nombre": "Irak",
+      "codigo": "IRQ",
+      "grupo": "I",
+      "confederacion": "AFC",
+      "continente": "Asia",
+      "esAnfitrion": false
+    },
+    {
+      "id": 36,
+      "nombre": "Noruega",
+      "codigo": "NOR",
+      "grupo": "I",
+      "confederacion": "UEFA",
+      "continente": "Europa",
+      "esAnfitrion": false
+    },
+    {
+      "id": 37,
+      "nombre": "Argentina",
+      "codigo": "ARG",
+      "grupo": "J",
+      "confederacion": "CONMEBOL",
+      "continente": "Sudamérica",
+      "esAnfitrion": false
+    },
+    {
+      "id": 38,
+      "nombre": "Argelia",
+      "codigo": "DZA",
+      "grupo": "J",
+      "confederacion": "CAF",
+      "continente": "África",
+      "esAnfitrion": false
+    },
+    {
+      "id": 39,
+      "nombre": "Austria",
+      "codigo": "AUT",
+      "grupo": "J",
+      "confederacion": "UEFA",
+      "continente": "Europa",
+      "esAnfitrion": false
+    },
+    {
+      "id": 40,
+      "nombre": "Jordania",
+      "codigo": "JOR",
+      "grupo": "J",
+      "confederacion": "AFC",
+      "continente": "Asia",
+      "esAnfitrion": false
+    },
+    {
+      "id": 41,
+      "nombre": "Portugal",
+      "codigo": "POR",
+      "grupo": "K",
+      "confederacion": "UEFA",
+      "continente": "Europa",
+      "esAnfitrion": false
+    },
+    {
+      "id": 42,
+      "nombre": "República Democrática del Congo",
+      "codigo": "COD",
+      "grupo": "K",
+      "confederacion": "CAF",
+      "continente": "África",
+      "esAnfitrion": false
+    },
+    {
+      "id": 43,
+      "nombre": "Uzbekistán",
+      "codigo": "UZB",
+      "grupo": "K",
+      "confederacion": "AFC",
+      "continente": "Asia",
+      "esAnfitrion": false
+    },
+    {
+      "id": 44,
+      "nombre": "Colombia",
+      "codigo": "COL",
+      "grupo": "K",
+      "confederacion": "CONMEBOL",
+      "continente": "Sudamérica",
+      "esAnfitrion": false
+    },
+    {
+      "id": 45,
+      "nombre": "Inglaterra",
+      "codigo": "ENG",
+      "grupo": "L",
+      "confederacion": "UEFA",
+      "continente": "Europa",
+      "esAnfitrion": false
+    },
+    {
+      "id": 46,
+      "nombre": "Croacia",
+      "codigo": "CRO",
+      "grupo": "L",
+      "confederacion": "UEFA",
+      "continente": "Europa",
+      "esAnfitrion": false
+    },
+    {
+      "id": 47,
+      "nombre": "Ghana",
+      "codigo": "GHA",
+      "grupo": "L",
+      "confederacion": "CAF",
+      "continente": "África",
+      "esAnfitrion": false
+    },
+    {
+      "id": 48,
+      "nombre": "Panamá",
+      "codigo": "PAN",
+      "grupo": "L",
+      "confederacion": "CONCACAF",
+      "continente": "Norteamérica",
+      "esAnfitrion": false
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(233, 219, 219);
+    padding: 20px;
+    margin: 15px;
+}
+
+.sec1 {
+    background-color: rgb(142, 178, 236);
+    padding: 30px;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 10px;
+
+
+
+}
+
+button {
+    background-color: aquamarine;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+button:hover {
+    background-color: aqua;
+    color: aliceblue;
+    border: 1px solid #5ca9c0;
+}

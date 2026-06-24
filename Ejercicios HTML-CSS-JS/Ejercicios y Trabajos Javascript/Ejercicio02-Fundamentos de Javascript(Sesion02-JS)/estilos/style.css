@@ -1,0 +1,19 @@
+section {
+    background-color: rgb(13, 212, 182);
+    border-radius: 20px;
+    padding: 10px;
+    border: 2px solid;
+}
+
+button {
+    background-color: rgb(50, 155, 216);
+    color: black;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+button:hover {
+    color: aliceblue;
+    background-color: rgb(166, 101, 227);
+}
