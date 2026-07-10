@@ -3,7 +3,7 @@
 // Ya no exportamos SEED_DATA como objeto, sino una función que obtiene los datos
 export const fetchSeedData = async () => {
     try {
-        const response = await fetch('../data.json'); // Ruta relativa desde la carpeta js/
+        const response = await fetch('data.json'); // Ruta relativa a la raíz (index.html o admin.html)
         if (!response.ok) {
             throw new Error(`Error al cargar data.json: ${response.status}`);
         }
