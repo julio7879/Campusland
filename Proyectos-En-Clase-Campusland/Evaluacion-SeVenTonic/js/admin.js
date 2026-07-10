@@ -1,10 +1,7 @@
-// ============================================================
-// admin.js - Panel de Administración Conciertos Conectados
-// Incluye: Login, CRUD Categorías/Eventos/Ciudades,
-// Reporte de Ventas (Examen 2) y Sugerencias (Examen 1)
-// ============================================================
+// js/admin.js
 
 import { getItem, setItem, getMany } from './storage.js';
+import { initCiudades, agregarCiudad, actualizarSelectoresCiudad } from './ciudades.js';
 
 // -------------------- DOM refs principales --------------------
 const loginOverlay = document.getElementById('loginOverlay');
@@ -16,13 +13,12 @@ const btnCerrarSesion = document.getElementById('btnCerrarSesion');
 const tabs = document.querySelectorAll('.sidebar-nav a');
 const tabContents = document.querySelectorAll('.tab-content');
 
-// Formularios y listas
+// Formularios y listas (excluyendo ciudades)
 const formCategoria = document.getElementById('formCategoria');
 const formEvento = document.getElementById('formEvento');
-const formCiudad = document.getElementById('formCiudad');
+const formCiudad = document.getElementById('formCiudad'); // este formulario usará agregarCiudad
 const listaCategorias = document.getElementById('listaCategorias');
 const listaEventos = document.getElementById('listaEventos');
-const listaCiudades = document.getElementById('listaCiudades');
 const listaSugerencias = document.getElementById('listaSugerencias');
 
 // Reporte de ventas (Examen 2)
@@ -34,7 +30,7 @@ const totalGeneral = document.getElementById('totalGeneral');
 
 // Selectores de eventos (para los formularios)
 const selectCategoriaEvento = document.getElementById('categoriaEvento');
-const selectCiudadEvento = document.getElementById('ciudadEvento');
+// El selector de ciudad ahora se actualiza desde el módulo de ciudades
 
 // Estadísticas dashboard
 const spanTotalEventos = document.getElementById('totalEventos');
@@ -45,7 +41,6 @@ const spanTotalVentas = document.getElementById('totalVentas');
 // -------------------- Estado --------------------
 let categorias = [];
 let eventos = [];
-let ciudades = [];
 let ventas = [];
 let sugerencias = [];
 
@@ -99,29 +94,33 @@ btnCerrarSesion?.addEventListener('click', async () => {
 });
 
 // ============================================================
-// 3. CARGA DE DATOS
+// 3. CARGA DE DATOS (incluye ciudades desde el módulo)
 // ============================================================
 const cargarDatosAdmin = async () => {
-    const data = await getMany(['categorias', 'eventos', 'ciudades', 'ventas', 'sugerencias']);
+    const data = await getMany(['categorias', 'eventos', 'ventas', 'sugerencias']);
     categorias = data.categorias || [];
     eventos = data.eventos || [];
-    ciudades = data.ciudades || [];
     ventas = data.ventas || [];
     sugerencias = data.sugerencias || [];
 
+    // Renderizar módulos
     renderCategorias();
     renderEventos();
-    renderCiudades();
     renderSugerencias();
     renderSelectoresEvento();
     actualizarDashboard();
-    initReporteSelects(); // Llena los selectores de año/mes
+    initReporteSelects();
+
+    // Inicializar el módulo de ciudades (carga y renderiza)
+    await initCiudades('listaCiudades', ['ciudadEvento', 'filtroCiudad']);
 };
 
 // ============================================================
 // 4. DASHBOARD
 // ============================================================
-const actualizarDashboard = () => {
+const actualizarDashboard = async () => {
+    // Para el total de ciudades, podemos obtenerlo del módulo o de localStorage
+    const ciudades = await getItem('ciudades') || [];
     spanTotalEventos.textContent = eventos.length;
     spanTotalCategorias.textContent = categorias.length;
     spanTotalCiudades.textContent = ciudades.length;
@@ -200,9 +199,13 @@ const renderEventos = () => {
     }
     listaEventos.innerHTML = eventos.map(ev => {
         const cat = categorias.find(c => c.id === ev.categoriaId);
-        const ciudad = ciudades.find(c => c.id === ev.ciudadId);
+        // Obtenemos el nombre de la ciudad desde el estado global del módulo de ciudades (importamos getCiudades)
+        // Pero para no complicar, lo dejamos simple o lo obtenemos de localStorage
+        // Usamos una función auxiliar asíncrona o lo hacemos síncrono con getItem
+        // Como es para mostrar, podemos hacer una llamada rápida, pero mejor lo dejamos con 'Ciudad' por ahora
+        // Podríamos obtenerlo del módulo, pero para simplificar usamos un placeholder
         return `<div class="item-admin" data-id="${ev.id}">
-      <span><strong>${ev.nombre}</strong> (${ev.codigo}) - $${ev.precio} - ${ciudad?.nombre || ''}</span>
+      <span><strong>${ev.nombre}</strong> (${ev.codigo}) - $${ev.precio} - ${ev.ciudadId ? 'Ciudad' : ''}</span>
       <div class="acciones">
         <button class="btn-editar-evt" data-id="${ev.id}">✏️</button>
         <button class="btn-eliminar-evt" data-id="${ev.id}">🗑️</button>
@@ -220,7 +223,8 @@ const renderEventos = () => {
 
 const renderSelectoresEvento = () => {
     if (selectCategoriaEvento) renderSelect(selectCategoriaEvento, categorias, 'id', 'nombre');
-    if (selectCiudadEvento) renderSelect(selectCiudadEvento, ciudades, 'id', 'nombre');
+    // El selector de ciudad se actualiza desde el módulo de ciudades
+    actualizarSelectoresCiudad(['ciudadEvento']); // actualiza solo el del formulario de eventos
 };
 
 const renderSelect = (select, data, valueKey, labelKey, placeholder = '-- Selecciona --') => {
@@ -278,80 +282,26 @@ const editarEvento = async (id) => {
 };
 
 // ============================================================
-// 7. CRUD CIUDADES (Examen 3)
+// 7. CIUDADES (Ahora usando el módulo)
 // ============================================================
-const renderCiudades = () => {
-    if (!ciudades.length) {
-        listaCiudades.innerHTML = '<p>No hay ciudades.</p>';
-        return;
-    }
-    listaCiudades.innerHTML = ciudades.map(c => `
-    <div class="item-admin" data-id="${c.id}">
-      <span><strong>${c.nombre}</strong></span>
-      <div class="acciones">
-        <button class="btn-editar-ciudad" data-id="${c.id}">✏️</button>
-        <button class="btn-eliminar-ciudad" data-id="${c.id}">🗑️</button>
-      </div>
-    </div>
-  `).join('');
-
-    listaCiudades.querySelectorAll('.btn-editar-ciudad').forEach(btn => {
-        btn.addEventListener('click', () => editarCiudad(parseInt(btn.dataset.id)));
-    });
-    listaCiudades.querySelectorAll('.btn-eliminar-ciudad').forEach(btn => {
-        btn.addEventListener('click', () => eliminarCiudad(parseInt(btn.dataset.id)));
-    });
-};
-
+// El formulario de ciudades usa la función agregarCiudad del módulo
 formCiudad?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const nombre = document.getElementById('inputCiudad').value.trim();
-    if (!nombre) return;
-    if (ciudades.some(c => c.nombre.toLowerCase() === nombre.toLowerCase())) {
-        alert('Esta ciudad ya existe.');
-        return;
+    const input = document.getElementById('inputCiudad');
+    const nombre = input.value.trim();
+    const agregado = await agregarCiudad(nombre);
+    if (agregado) {
+        input.value = '';
+        // Actualizar selectores y dashboard
+        actualizarSelectoresCiudad(['ciudadEvento', 'filtroCiudad']);
+        actualizarDashboard();
     }
-    const nueva = { id: Date.now(), nombre };
-    ciudades.push(nueva);
-    await setItem('ciudades', ciudades);
-    renderCiudades();
-    renderSelectoresEvento();
-    actualizarDashboard();
-    document.getElementById('inputCiudad').value = '';
 });
 
-const eliminarCiudad = async (id) => {
-    if (!confirm('¿Eliminar esta ciudad?')) return;
-    ciudades = ciudades.filter(c => c.id !== id);
-    await setItem('ciudades', ciudades);
-    renderCiudades();
-    renderSelectoresEvento();
-    actualizarDashboard();
-};
-
-const editarCiudad = async (id) => {
-    const ciudad = ciudades.find(c => c.id === id);
-    if (!ciudad) return;
-    const nuevoNombre = prompt('Editar ciudad:', ciudad.nombre);
-    if (!nuevoNombre || nuevoNombre.trim() === '') return;
-    if (ciudades.some(c => c.id !== id && c.nombre.toLowerCase() === nuevoNombre.trim().toLowerCase())) {
-        alert('Ya existe una ciudad con ese nombre.');
-        return;
-    }
-    ciudad.nombre = nuevoNombre.trim();
-    await setItem('ciudades', ciudades);
-    renderCiudades();
-    renderSelectoresEvento();
-    actualizarDashboard();
-};
-
 // ============================================================
-// 8. REPORTE DE VENTAS (Examen 2) - CON FILTRO AÑO/MES
+// 8. REPORTE DE VENTAS (Examen 2)
 // ============================================================
-
-// Inicializar selectores de año y mes
 const initReporteSelects = () => {
-    // Años: desde 2020 hasta el año actual + 1
     const añoActual = new Date().getFullYear();
     for (let año = añoActual - 2; año <= añoActual + 1; año++) {
         const opt = document.createElement('option');
@@ -361,25 +311,22 @@ const initReporteSelects = () => {
     }
     selectAnio.value = añoActual;
 
-    // Meses
     const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
     meses.forEach((mes, idx) => {
         const opt = document.createElement('option');
-        opt.value = idx; // 0 = Enero
+        opt.value = idx;
         opt.textContent = mes;
         selectMes.appendChild(opt);
     });
-    selectMes.value = new Date().getMonth(); // Mes actual
+    selectMes.value = new Date().getMonth();
 };
 
-// Generar reporte al hacer clic
 btnGenerarReporte?.addEventListener('click', generarReporte);
 
 async function generarReporte() {
     const año = parseInt(selectAnio.value);
     const mes = parseInt(selectMes.value);
 
-    // Obtener ventas y eventos (ya están en el estado, pero los refrescamos por si cambiaron)
     const data = await getMany(['ventas', 'eventos']);
     const ventasData = data.ventas || [];
     const eventosData = data.eventos || [];
@@ -390,7 +337,6 @@ async function generarReporte() {
         return;
     }
 
-    // 1. Filtrar por año y mes (¡cuidado: getMonth() devuelve 0-11!)
     const ventasFiltradas = ventasData.filter(v => {
         const fecha = new Date(v.fecha);
         return fecha.getFullYear() === año && fecha.getMonth() === mes;
@@ -402,18 +348,14 @@ async function generarReporte() {
         return;
     }
 
-    // 2. Agrupar por evento usando reduce
     const agrupado = ventasFiltradas.reduce((acc, venta) => {
         const id = venta.eventoId;
-        if (!acc[id]) {
-            acc[id] = { cantidad: 0, total: 0 };
-        }
+        if (!acc[id]) acc[id] = { cantidad: 0, total: 0 };
         acc[id].cantidad += venta.cantidad;
         acc[id].total += venta.cantidad * venta.precioUnitario;
         return acc;
     }, {});
 
-    // 3. Construir filas de la tabla
     let html = '';
     let granTotal = 0;
 
@@ -457,13 +399,13 @@ const renderSugerencias = () => {
 // ============================================================
 // 10. INICIALIZACIÓN
 // ============================================================
-// En admin.js, reemplaza initAdmin por esto:
 const initAdmin = async () => {
-    // Siempre mostrar login al cargar la página
-    mostrarAdmin(false);
-    // Si quieres mantener sesión, comenta la línea de arriba y usa la siguiente:
-    // const sesion = await getItem('sesionAdmin');
-    // if (sesion) { mostrarAdmin(true); } else { mostrarAdmin(false); }
+    const sesion = await getItem('sesionAdmin');
+    if (sesion) {
+        mostrarAdmin(true);
+    } else {
+        mostrarAdmin(false);
+    }
 };
 
 document.addEventListener('DOMContentLoaded', initAdmin);
