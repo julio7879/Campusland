@@ -1,0 +1,742 @@
+/* ============================================
+   styles.css - Conciertos Conectados
+   Estilos generales, layout y componentes
+   ============================================ */
+
+/* ---------- RESET Y BASE ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7fc;
+    color: #1e293b;
+    padding: 1rem;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ---------- HEADER (cliente y admin) ---------- */
+header {
+    background: #0f172a;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+header nav a,
+header nav button {
+    color: #94a3b8;
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+header nav a:hover,
+header nav button:hover {
+    background: #1e293b;
+    color: white;
+}
+
+header nav a.active {
+    background: #3b82f6;
+    color: white;
+}
+
+#carritoCount {
+    background: #3b82f6;
+    border-radius: 50%;
+    padding: 0.1rem 0.5rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-left: 0.2rem;
+}
+
+/* ---------- MAIN Y SECCIONES ---------- */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ---------- FILTROS (cliente) ---------- */
+#filtros {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#filtros input,
+#filtros select {
+    flex: 1 1 180px;
+    padding: 0.6rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    font-size: 0.95rem;
+}
+
+#filtros input:focus,
+#filtros select:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 1px;
+}
+
+/* ---------- GRID DE EVENTOS (cliente) ---------- */
+.grid-eventos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* ---------- TARJETA DE EVENTO (Web Component) ---------- */
+.card-evento {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-evento:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-evento img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #f1f5f9;
+    margin-bottom: 0.8rem;
+}
+
+.card-evento h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: #0f172a;
+}
+
+.card-evento .info {
+    color: #475569;
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+}
+
+.card-evento .precio {
+    font-weight: 700;
+    color: #2c7be5;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+.card-evento .btn-carrito {
+    background: #2c7be5;
+    color: white;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: auto;
+}
+
+.card-evento .btn-carrito:hover {
+    background: #1a5fc7;
+}
+
+/* ---------- MODALES ---------- */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal:not(.hidden) {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content .cerrar {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #94a3b8;
+    transition: color 0.2s;
+}
+
+.modal-content .cerrar:hover {
+    color: #1e293b;
+}
+
+.modal-content h3 {
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.modal-content form div {
+    margin-bottom: 1rem;
+}
+
+.modal-content label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.modal-content textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.modal-content ul li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+/* ---------- BOTONES ---------- */
+.btn-primary {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.btn-primary:hover {
+    background: #2563eb;
+}
+
+.btn-primary:active {
+    transform: scale(0.97);
+}
+
+.btn-flotante {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 500;
+}
+
+.btn-flotante:hover {
+    background: #2563eb;
+    transform: scale(1.05);
+}
+
+/* ---------- UTILIDADES ---------- */
+.hidden {
+    display: none !important;
+}
+
+.exito {
+    background: #dcfce7;
+    color: #166534;
+    padding: 0.8rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* ============================================
+   ADMIN PANEL – SIDEBAR Y LAYOUT
+   ============================================ */
+
+/* ---------- LOGIN OVERLAY ---------- */
+.login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.login-overlay.hidden {
+    display: none;
+}
+
+.login-box {
+    background: white;
+    padding: 2.5rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.login-box form div {
+    margin-bottom: 1rem;
+}
+
+.login-box label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* ---------- PANEL ADMIN (oculto hasta login) ---------- */
+#adminPanel {
+    display: flex;
+    min-height: 100vh;
+}
+
+#adminPanel.hidden {
+    display: none;
+}
+
+/* ---------- SIDEBAR ---------- */
+.sidebar {
+    width: 240px;
+    background: #0f172a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.sidebar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0 1.5rem 2rem 1.5rem;
+    border-bottom: 1px solid #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 1rem 0;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.7rem 1.5rem;
+    color: #94a3b8;
+    transition: background 0.2s, color 0.2s;
+    border-left: 3px solid transparent;
+    font-weight: 500;
+}
+
+.sidebar-nav a:hover {
+    background: #1e293b;
+    color: white;
+}
+
+.sidebar-nav a.active {
+    background: #1e293b;
+    color: white;
+    border-left-color: #3b82f6;
+}
+
+.sidebar-nav a i {
+    width: 1.5rem;
+    text-align: center;
+}
+
+.logout {
+    margin: 1rem 1.5rem;
+    padding: 0.6rem;
+    background: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.logout:hover {
+    background: #b91c1c;
+}
+
+/* ---------- CONTENIDO PRINCIPAL ADMIN ---------- */
+.admin-content {
+    flex: 1;
+    padding: 2rem;
+    background: #f1f5f9;
+    overflow-y: auto;
+}
+
+.admin-content section {
+    display: none;
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.admin-content section.active {
+    display: block;
+}
+
+.admin-content h2 {
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/* ---------- DASHBOARD STATS ---------- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.stat-card i {
+    font-size: 2rem;
+    color: #3b82f6;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card span {
+    font-weight: 700;
+    font-size: 1.8rem;
+    display: block;
+    color: #0f172a;
+}
+
+/* ---------- FORMULARIOS ADMIN ---------- */
+.admin-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    background: #f8fafc;
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+    flex: 1 1 180px;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    font-size: 0.95rem;
+}
+
+.admin-form textarea {
+    flex-basis: 100%;
+    min-height: 60px;
+    resize: vertical;
+}
+
+.admin-form input:focus,
+.admin-form select:focus,
+.admin-form textarea:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 1px;
+}
+
+/* ---------- LISTAS ADMIN (items) ---------- */
+.admin-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.admin-list .item-admin {
+    background: white;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+}
+
+.admin-list .item-admin .acciones {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.admin-list .item-admin .acciones button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    color: #64748b;
+    transition: background 0.2s, color 0.2s;
+}
+
+.admin-list .item-admin .acciones button:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+.admin-list .item-admin .acciones .btn-eliminar-cat,
+.admin-list .item-admin .acciones .btn-eliminar-evt,
+.admin-list .item-admin .acciones .btn-eliminar-ciudad {
+    color: #ef4444;
+}
+
+.admin-list .item-admin .acciones .btn-eliminar-cat:hover,
+.admin-list .item-admin .acciones .btn-eliminar-evt:hover,
+.admin-list .item-admin .acciones .btn-eliminar-ciudad:hover {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+/* ---------- TABLAS (ventas) ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th,
+td {
+    border: 1px solid #e2e8f0;
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+}
+
+th {
+    background: #f1f5f9;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: #fafbfc;
+}
+
+/* ---------- FILTRO REPORTE ---------- */
+.filtro-reporte {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-end;
+    background: #f8fafc;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.filtro-reporte>div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.filtro-reporte label {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.filtro-reporte select {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: white;
+}
+
+#contenedorReporte {
+    position: relative;
+}
+
+#mensajeSinVentas {
+    text-align: center;
+    padding: 2rem;
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+#mensajeSinVentas:not(.hidden) {
+    display: block;
+}
+
+#tablaReporte {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tablaReporte th,
+#tablaReporte td {
+    border: 1px solid #e2e8f0;
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+}
+
+#tablaReporte th {
+    background: #f1f5f9;
+}
+
+#tablaReporte tfoot td {
+    font-weight: bold;
+}
+
+/* Enlace a Admin en el header del index */
+header nav .admin-link {
+    background: #3b82f6;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    transition: background 0.2s;
+}
+
+header nav .admin-link:hover {
+    background: #2563eb;
+    color: white;
+}

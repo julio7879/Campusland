@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conciertos Conectados</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-music"></i>
+            <span>Conciertos Conectados</span>
+        </div>
+        <nav>
+            <a href="#eventos" class="active"><i class="fas fa-calendar-alt"></i> Eventos</a>
+            <button id="btnVerCarrito"><i class="fas fa-shopping-cart"></i> Carrito <span
+                    id="carritoCount">0</span></button>
+            <button id="btnAbrirSugerencia"><i class="fas fa-comment"></i> Sugerencia</button>
+            <!-- Enlace al panel de administración (login) -->
+            <a href="admin.html" class="admin-link"><i class="fas fa-user-shield"></i> Admin</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Filtros -->
+        <section id="filtros">
+            <input type="text" id="buscador" placeholder="Buscar eventos por nombre o descripción...">
+            <select id="filtroCiudad">
+                <option value="">Todas las ciudades</option>
+            </select>
+            <select id="filtroCategoria">
+                <option value="">Todas las categorías</option>
+            </select>
+        </section>
+
+        <!-- Listado de eventos -->
+        <section id="eventos">
+            <h2>Próximos Eventos</h2>
+            <div id="contenedorEventos" class="grid-eventos"></div>
+        </section>
+    </main>
+
+    <!-- Modal: Carrito de compras -->
+    <div id="modalCarrito" class="modal hidden">
+        <div class="modal-content">
+            <span class="cerrar" id="cerrarCarrito">&times;</span>
+            <h3><i class="fas fa-shopping-cart"></i> Carrito de Compras</h3>
+            <ul id="listaCarrito"></ul>
+            <p><strong>Total: </strong><span id="totalCarrito">$0</span></p>
+            <button id="btnComprar" class="btn-primary">Comprar</button>
+        </div>
+    </div>
+
+    <!-- Modal: Datos de compra -->
+    <div id="modalCompra" class="modal hidden">
+        <div class="modal-content">
+            <span class="cerrar" id="btnCerrarModal">&times;</span>
+            <h3><i class="fas fa-user-check"></i> Datos de Compra</h3>
+            <form id="formCompra">
+                <div>
+                    <label for="nombreCompra">Nombre completo</label>
+                    <input type="text" id="nombreCompra" name="nombre" required>
+                </div>
+                <div>
+                    <label for="emailCompra">Correo electrónico</label>
+                    <input type="email" id="emailCompra" name="email" required>
+                </div>
+                <button type="submit" class="btn-primary">Confirmar compra</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Sugerencia (Examen 1) -->
+    <div id="modalSugerencia" class="modal hidden">
+        <div class="modal-content">
+            <span class="cerrar" id="btnCerrarSugerencia">&times;</span>
+            <h3><i class="fas fa-comment"></i> Enviar Sugerencia</h3>
+            <form id="formSugerencia">
+                <div>
+                    <label for="txtCorreo">Correo (opcional)</label>
+                    <input type="email" id="txtCorreo" placeholder="tu@email.com">
+                </div>
+                <div>
+                    <label for="txtMensaje">Mensaje *</label>
+                    <textarea id="txtMensaje" rows="4" placeholder="Escribe tu sugerencia..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Enviar</button>
+            </form>
+            <div id="mensajeExito" class="exito hidden">✅ ¡Gracias por tu sugerencia!</div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { seedData } from './js/storage.js';
+        import { SEED_DATA } from './js/data-seed.js';
+        // Inicializar datos semilla si no existen
+        await seedData(SEED_DATA);
+        // Cargar la lógica de la vista cliente
+        import './js/main.js';
+    </script>
+</body>
+
+</html>

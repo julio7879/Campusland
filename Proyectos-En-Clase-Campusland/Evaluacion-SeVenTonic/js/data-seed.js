@@ -1,0 +1,30 @@
+// js/data-seed.js
+
+export const SEED_DATA = {
+    categorias: [
+        { id: 1, nombre: 'Rock', descripcion: 'Música rock en todas sus variantes' },
+        { id: 2, nombre: 'Pop', descripcion: 'Pop latino e internacional' },
+        { id: 3, nombre: 'Electrónica', descripcion: 'Música electrónica y DJ sets' },
+        { id: 4, nombre: 'Jazz', descripcion: 'Jazz contemporáneo y fusión' }
+    ],
+    ciudades: [
+        { id: 1, nombre: 'Bogotá' },
+        { id: 2, nombre: 'Medellín' },
+        { id: 3, nombre: 'Cali' },
+        { id: 4, nombre: 'Barranquilla' }
+    ],
+    eventos: [
+        { id: 1, codigo: 'ROCK2026', nombre: 'Rock al Parque', categoriaId: 1, precio: 45000, fecha: '2026-08-15', hora: '14:00', ciudadId: 1, imagen: 'rock.jpg', descripcion: 'El festival de rock más grande de la ciudad.' },
+        { id: 2, codigo: 'JAZZ26', nombre: 'Festival de Jazz', categoriaId: 4, precio: 60000, fecha: '2026-09-20', hora: '18:00', ciudadId: 2, imagen: 'jazz.jpg', descripcion: 'Noches de jazz con artistas nacionales.' },
+        { id: 3, codigo: 'ELECTRO', nombre: 'ElectroBeats', categoriaId: 3, precio: 38000, fecha: '2026-10-10', hora: '20:00', ciudadId: 3, imagen: 'electro.jpg', descripcion: 'La mejor electrónica en un solo lugar.' },
+        { id: 4, codigo: 'POPSTAR', nombre: 'Pop Star Night', categoriaId: 2, precio: 55000, fecha: '2026-11-05', hora: '19:00', ciudadId: 1, imagen: 'pop.jpg', descripcion: 'Grandes éxitos del pop actual.' }
+    ],
+    ventas: [
+        { id: 1, eventoId: 1, cantidad: 2, precioUnitario: 45000, comprador: 'Carlos Pérez', email: 'carlos@mail.com', fecha: '2026-07-01T10:30:00' },
+        { id: 2, eventoId: 1, cantidad: 1, precioUnitario: 45000, comprador: 'Ana Gómez', email: 'ana@mail.com', fecha: '2026-07-05T14:20:00' },
+        { id: 3, eventoId: 2, cantidad: 3, precioUnitario: 60000, comprador: 'Luis Torres', email: 'luis@mail.com', fecha: '2026-08-12T09:15:00' }
+    ],
+    sugerencias: [
+        { id: 1, correo: 'cliente@mail.com', mensaje: 'Excelente evento, más rock por favor', fecha: '2026-07-02T08:00:00' }
+    ]
+};
