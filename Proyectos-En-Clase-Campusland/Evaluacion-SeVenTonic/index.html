@@ -97,9 +97,11 @@
 
     <script type="module">
         import { seedData } from './js/storage.js';
-        import { SEED_DATA } from './js/data-seed.js';
-        await seedData(SEED_DATA);
-        import './js/main.js';
+        import { fetchSeedData } from './js/data-seed.js';
+
+        const seedDataFromJson = await fetchSeedData();
+        await seedData(seedDataFromJson);
+        import('./js/main.js');
     </script>
 </body>
 
