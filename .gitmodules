@@ -1,3 +1,6 @@
 [submodule "Proyectos-En-Clase-Campusland/Data Commerce Challenge"]
 	path = Proyectos-En-Clase-Campusland/Data Commerce Challenge
 	url = https://github.com/julio7879/Challenge-Dataset-Comerce.git
+[submodule "Proyectos-En-Clase-Campusland/Proyecto-SeVenTonic---Js"]
+	path = Proyectos-En-Clase-Campusland/Proyecto-SeVenTonic---Js
+	url = https://github.com/tecnicajesus20-code/Proyecto-SeVenTonic---Js.git
